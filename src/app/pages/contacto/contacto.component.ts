@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent {
+  showFlag: string = 'spain';
 
+constructor() {
+    this.showFlag = 'spain';
+  }
+
+showContactElement(flag: string): void {
+    this.showFlag = flag;
+  }
 }
+

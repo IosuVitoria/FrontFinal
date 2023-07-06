@@ -12,6 +12,7 @@ import { GestionCentroComponent } from './pages/gestion-centro/gestion-centro.co
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { NotasComponent } from './pages/alumno/notas/notas.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RegisterComponent } from './pages/register/register.component';
     GestionCentroComponent,
     ContactoComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NotasComponent
   ],
   imports: [
     BrowserModule,

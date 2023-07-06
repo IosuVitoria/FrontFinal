@@ -16,6 +16,7 @@ const routes: Routes = [
   {path:"contact", component:GestionCentroComponent},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent}
+  
 ];
 
 @NgModule({
