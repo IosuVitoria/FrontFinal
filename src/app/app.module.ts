@@ -14,6 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
+import { CardComponent } from './pages/home/card/card.component';
+import { ActividadesComponent } from './pages/home/actividades/actividades.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SliderComponent } from './pages/home/slider/slider.component';
     LoginComponent,
     RegisterComponent,
     NotasComponent,
-    SliderComponent
+    SliderComponent,
+    CardComponent,
+    ActividadesComponent
   ],
   imports: [
     BrowserModule,
