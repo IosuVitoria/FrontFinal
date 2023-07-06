@@ -6,6 +6,7 @@ import { ProfesorComponent } from './pages/profesor/profesor.component';
 import { GestionCentroComponent } from './pages/gestion-centro/gestion-centro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 const routes: Routes = [ 
   
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path:"alumno", component:AlumnoComponent},
   {path:"profesor", component:ProfesorComponent},
   {path:"gestionCentro", component:GestionCentroComponent},
-  {path:"contact", component:GestionCentroComponent},
+  {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent}
   
