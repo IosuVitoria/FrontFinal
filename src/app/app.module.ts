@@ -14,6 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
+import { ActividadesCentroComponent } from './pages/actividades-centro/actividades-centro.component';
+import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SliderComponent } from './pages/home/slider/slider.component';
     LoginComponent,
     RegisterComponent,
     NotasComponent,
-    SliderComponent
+    SliderComponent,
+    ActividadesCentroComponent,
+    ActividadesCulturalesComponent
   ],
   imports: [
     BrowserModule,
