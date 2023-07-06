@@ -1,0 +1,5 @@
+shared> Footer y Nav, 
+
+pages> Home, Alumno, Profesor, Gestión de Centro(super usuario), Contacto, Login (register - useefect y usestate)
+
+
