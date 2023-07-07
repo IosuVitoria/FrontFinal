@@ -31,36 +31,3 @@
   border-radius: 2rem;
   box-shadow: 0rem 1rem 2rem -0.4rem hsl(0, 0%, 0%);
 }
-@import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
-
-.papa {
-  background: url("../../../../../src/assets/imagen1.jpg");
-  width: 94vw;
-  height: 80vh;
-  margin: 0 3vw;
-  display: flex;
-  align-items: center;
-}
-
-.slider {
-  display: flex;
-  overflow: hidden;
-}
-
-.slide {
-  flex: 1 0 100%;
-  object-fit: cover;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  animation: 14s slide infinite;
-}
-
-.slide img {
-  width: 70vw;
-  height: 70vh;
-  margin: 0 7vw;
-  border: solid 20px rgb(34, 34, 34);
-  border-radius: 2rem;
-  box-shadow: 0rem 1rem 2rem -0.4rem hsl(0, 0%, 0%);
-}

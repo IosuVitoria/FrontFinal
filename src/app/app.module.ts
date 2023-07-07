@@ -30,7 +30,9 @@ import { ActividadesComponent } from './pages/home/actividades/actividades.compo
     LoginComponent,
     RegisterComponent,
     NotasComponent,
-    SliderComponent
+    SliderComponent,
+    CardComponent,
+    ActividadesComponent
   ],
   imports: [
     BrowserModule,
