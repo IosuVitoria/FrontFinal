@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -15,7 +14,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
 import { CardComponent } from './pages/home/card/card.component';
-import { ActividadesComponent } from './pages/home/actividades/actividades.component';
+import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import { ActividadesComponent } from './pages/home/actividades/actividades.compo
     NotasComponent,
     SliderComponent,
     CardComponent,
-    ActividadesComponent
+    ActividadesCulturalesComponent
   ],
   imports: [
     BrowserModule,
