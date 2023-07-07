@@ -13,6 +13,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
+import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
+import { SliderComponent } from './pages/home/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NotasComponent } from './pages/alumno/notas/notas.component';
     ContactoComponent,
     LoginComponent,
     RegisterComponent,
-    NotasComponent
+    NotasComponent,
+    ActividadesCulturalesComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
