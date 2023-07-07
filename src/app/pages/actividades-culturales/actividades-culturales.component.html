@@ -1,1 +1,14 @@
-<p>actividades-culturales works!</p>
+<div class="containerCultural">ACTIVIDADES CULTURALES</div>
+<div *ngFor="let articulo of articulos; let i = index" class="card" [ngClass]="{ 'card-right': i % 2 !== 0, 'card-left': i % 2 === 0 }">
+  <div class="card-image">
+    <img [src]="articulo.imagen" alt="Imagen del artículo" />
+  </div>
+  <div class="card-content">
+    <h2 (click)="mostrarContenido(i)">{{ articulo.titulo }}</h2>
+    <p class="autor">Autor: {{ articulo.autor }}</p>
+    <p class="contenido" *ngIf="articulo.mostrarContenido">{{ articulo.contenido }}</p>
+    <p class="pincha" (click)="mostrarContenido(i)">
+      Pincha para mostrar contenido
+    </p>
+  </div>
+</div>
