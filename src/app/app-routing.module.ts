@@ -5,8 +5,10 @@ import { AlumnoComponent } from './pages/alumno/alumno.component';
 import { ProfesorComponent } from './pages/profesor/profesor.component';
 import { GestionCentroComponent } from './pages/gestion-centro/gestion-centro.component';
 import { LoginComponent } from './pages/login/login.component';
+
 import { RegisterComponent } from './pages/register/register.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { PasswdComponent } from './pages/login/passwd/passwd.component';
 
 const routes: Routes = [ 
   
@@ -16,6 +18,7 @@ const routes: Routes = [
   {path:"gestionCentro", component:GestionCentroComponent},
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
+  {path:"password", component:PasswdComponent},
   {path:"register", component:RegisterComponent}
   
 ];

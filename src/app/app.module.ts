@@ -15,6 +15,10 @@ import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
 import { CardComponent } from './pages/home/card/card.component';
 import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { PasswdComponent } from './pages/login/passwd/passwd.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +35,23 @@ import { ActividadesCulturalesComponent } from './pages/actividades-culturales/a
     NotasComponent,
     SliderComponent,
     CardComponent,
-    ActividadesCulturalesComponent
+    ActividadesCulturalesComponent,
+    PasswdComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
