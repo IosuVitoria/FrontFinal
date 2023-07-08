@@ -15,6 +15,8 @@ import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
 import { CardComponent } from './pages/home/card/card.component';
 import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
+import { CardPerfilComponent } from './pages/profesor/card-perfil/card-perfil.component';
+import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ActividadesCulturalesComponent } from './pages/actividades-culturales/a
     NotasComponent,
     SliderComponent,
     CardComponent,
-    ActividadesCulturalesComponent
+    ActividadesCulturalesComponent,
+    CardPerfilComponent,
+    FormDatosComponent
   ],
   imports: [
     BrowserModule,
