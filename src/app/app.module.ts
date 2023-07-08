@@ -15,6 +15,11 @@ import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
 import { CardComponent } from './pages/home/card/card.component';
 import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
+import { CalendarioComponent } from './pages/alumno/calendario/calendario.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 @NgModule({
   declarations: [
@@ -31,11 +36,16 @@ import { ActividadesCulturalesComponent } from './pages/actividades-culturales/a
     NotasComponent,
     SliderComponent,
     CardComponent,
-    ActividadesCulturalesComponent
+    ActividadesCulturalesComponent,
+    CalendarioComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
