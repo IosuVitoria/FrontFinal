@@ -1,5 +1,23 @@
 <app-calendario>
-
-<!-- html relacionado con datos del alumno y edición -->
-
-<!-- html relacionado con las notas - GET -Servicio de GET contra la tabla de asignaturas. -->
+    <div>
+        <h4>Datos del Alumno</h4>
+        <div *ngIf="alumno">
+          <p><strong>Nombre:</strong> {{ alumno.nombre }}</p>
+          <p><strong>Apellidos:</strong> {{ alumno.apellidos }}</p>
+          <p><strong>Curso:</strong> {{ alumno.Curso }}</p>
+          <p><strong>Tutor 1:</strong> {{ alumno.tutor1 }}</p>
+          <p><strong>Tutor 2:</strong> {{ alumno.tutor2 ? alumno.tutor2 : 'N/A' }}</p>
+          <p><strong>Tutor de Curso:</strong> {{ alumno.tutorCurso }}</p>
+          <p><strong>Email:</strong> {{ alumno.email }}</p>
+          <p><strong>Asignaturas:</strong></p>
+          <ul>
+            <li *ngFor="let asignatura of alumno.asignaturas">{{ asignatura }}</li>
+          </ul>
+          <p><strong>Fecha de creación:</strong> {{ alumno.createdAt }}</p>
+          <p><strong>Fecha de actualización:</strong> {{ alumno.updatedAt }}</p>
+        </div>
+        <div *ngIf="!alumno">
+          <p>No se encontraron datos para el alumno especificado.</p>
+        </div>
+      </div>
+      
