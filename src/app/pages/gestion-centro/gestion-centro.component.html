@@ -1,1 +1,55 @@
-<p>gestion-centro works!</p>
+<div class="container">
+    <h1 class="titulo">Gestión de Alumnos</h1>
+  
+    <div class="filtro">
+      <label for="nombreInput">Filtrar por nombre:</label>
+      <input type="text" id="nombreInput" [(ngModel)]="filtroNombre" (input)="filtrarAlumnos()" />
+    </div>
+  
+    <table class="alumnos-table">
+      <thead>
+        <tr>
+          <th class="table-header">Nombre</th>
+          <th class="table-header">Apellidos</th>
+          <th class="table-header">Curso</th>
+          <th class="table-header">Tutor 1</th>
+          <th class="table-header">Tutor 2</th>
+          <th class="table-header">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnosFiltrados | slice: (currentPage - 1) * pageSize : currentPage * pageSize">
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.apellidos }}</td>
+          <td>{{ alumno.Curso }}</td>
+          <td>{{ alumno.tutor1 }}</td>
+          <td>{{ alumno.tutor2 }}</td>
+          <td>
+            <span class="accion" (click)="iniciarEdicion(alumno)">
+                <i class="fas fa-pencil-alt">Editar</i>
+              </span>
+            <span class="accion" (click)="confirmarEliminacion(alumno)">
+              X
+            </span>
+          </td>
+        </tr>
+        <tr *ngIf="alumnoEnEdicion === alumno">
+          <td colspan="6">
+            <form (submit)="confirmarActualizacion()">
+              <input type="text" [(ngModel)]="alumno.nombre" name="nombre" placeholder="Nombre" required>
+              <input type="text" [(ngModel)]="alumno.apellidos" name="apellidos" placeholder="Apellidos" required>
+              <input type="text" [(ngModel)]="alumno.Curso" name="curso" placeholder="Curso" required>
+              <input type="text" [(ngModel)]="alumno.tutor1" name="tutor1" placeholder="Tutor 1" required>
+              <input type="text" [(ngModel)]="alumno.tutor2" name="tutor2" placeholder="Tutor 2" required>
+              <button type="submit">Confirmar</button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="alumnosFiltrados.length > pageSize" class="pagination">
+      <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1" class="pagination-button">Anterior</button>
+      <button [disabled]="currentPage * pageSize >= alumnosFiltrados.length" (click)="currentPage = currentPage + 1" class="pagination-button">Siguiente</button>
+    </div>
+  </div>
