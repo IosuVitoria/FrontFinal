@@ -1,0 +1,30 @@
+{
+  "eventos": [
+    {
+      "id": "1",
+      "titulo": "Evento 1",
+      "descripcion": "Descripción del Evento 1",
+      "fecha": "2023-07-01",
+      "color": "#FF0000"
+    },
+    {
+      "id": "2",
+      "titulo": "Evento 2",
+      "descripcion": "Descripción del Evento 2",
+      "fecha": "2023-07-02",
+      "color": "#00FF00"
+    },
+    {
+      "titulo": "El juego de tronos",
+      "descripcion": "dsf",
+      "fecha": "2023-07-05",
+      "id": "Bk7Fe7u"
+    },
+    {
+      "titulo": "sdf",
+      "descripcion": "fds",
+      "fecha": "2023-07-13",
+      "id": "V6kvjsV"
+    }
+  ]
+}
