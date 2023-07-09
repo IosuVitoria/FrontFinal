@@ -19,6 +19,7 @@ import { CalendarioComponent } from './pages/alumno/calendario/calendario.compon
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     SliderComponent,
     CardComponent,
     ActividadesCulturalesComponent,
-    CalendarioComponent
+    CalendarioComponent,
+    NuevoAlumnoComponent
     
   ],
   imports: [

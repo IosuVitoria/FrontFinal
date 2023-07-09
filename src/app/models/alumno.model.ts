@@ -12,3 +12,4 @@ export interface Alumno {
     updatedAt: string;
     __v: number;
   }
+

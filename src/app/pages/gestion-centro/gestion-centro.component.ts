@@ -109,4 +109,5 @@ export class GestionCentroComponent implements OnInit {
       this.alumnoEnEdicion = null;
     }
   }
+  
 }

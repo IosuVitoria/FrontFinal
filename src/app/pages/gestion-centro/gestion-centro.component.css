@@ -1,3 +1,8 @@
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+  
 .titulo {
     font-family: 'Poppins', sans-serif;
     color: #333;
@@ -16,8 +21,7 @@
     border-color: #3498db;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
-
-
+  
 .alumnos-table {
     width: 100%;
     border-collapse: collapse;
@@ -25,14 +29,15 @@
     text-align: center;
 }
   
-.alumnos-table th, .alumnos-table td {
+.alumnos-table th,
+.alumnos-table td {
     border: 1px solid black;
     padding: 8px;
+    font-family: 'Poppins', sans-serif;
 }
   
 .alumnos-table th {
     background-color: #f2f2f2;
-    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     color: #333333;
     border-radius: 8px 8px 0 0;
@@ -57,17 +62,50 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
-
+  
 th:nth-child(6),
 td:nth-child(6) {
-  text-align: center;
+    text-align: center;
 }
-
+  
 .accion {
-  cursor: pointer;
-  color: red;
+    cursor: pointer;
+    color: red;
+}
+  
+.accion:hover {
+    text-decoration: underline;
+}
+  
+.form-group {
+    margin-bottom: 10px;
+}
+  
+.form-group input {
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 10px;
+    outline: none;
+    width: 25%;
+}
+  
+.form-group input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+  
+.boton-confirmar{
+    height: 35px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-weight: bold;
 }
 
-.accion:hover {
-  text-decoration: underline;
+.boton-nuevo{
+    height: 35px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    margin-bottom:15px;
 }
