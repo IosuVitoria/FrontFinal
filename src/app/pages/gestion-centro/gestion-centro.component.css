@@ -109,3 +109,10 @@ td:nth-child(6) {
     font-weight: bold;
     margin-bottom:15px;
 }
+
+.imageDivisor{
+    width: 60%;
+    margin-top: 20px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}

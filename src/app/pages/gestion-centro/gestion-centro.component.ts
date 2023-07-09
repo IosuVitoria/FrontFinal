@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GestionService } from '../../../services/gestionService.component';
 import { Alumno } from '../../models/alumno.model';
 
+
+
 @Component({
   selector: 'app-alumno',
   templateUrl: './gestion-centro.component.html',

@@ -9,6 +9,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 
+
 const routes: Routes = [ 
   
   {path:"home", component:HomeComponent},

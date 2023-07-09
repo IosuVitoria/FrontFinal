@@ -1,33 +1,39 @@
-<form (submit)="agregarAlumno()" class="nuevo-alumno-form">
-    <h3>Nuevo Alumno</h3>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno._id" name="_id" placeholder="ID" required>
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno.nombre" name="nombre" placeholder="Nombre" required>
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno.apellidos" name="apellidos" placeholder="Apellidos" required>
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno.Curso" name="curso" placeholder="Curso" required>
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno.tutor1" name="tutor1" placeholder="Tutor 1" required>
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno.tutor2" name="tutor2" placeholder="Tutor 2" required>
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno.tutorCurso" name="tutorCurso" placeholder="Tutor Curso" required>
-    </div>
-    <div class="form-group">
-      <input type="text" [(ngModel)]="nuevoAlumno.email" name="email" placeholder="Email" required>
-    </div>
-    <div class="form-group">
-      <label for="asignaturasInput">Asignaturas:</label>
-      <input type="text" id="asignaturasInput" [(ngModel)]="nuevoAlumno.asignaturas" name="asignaturas" placeholder="Asignaturas" required>
-    </div>
-    <button type="submit" class="boton-agregar">Agregar Alumno</button>
-  </form>
-  
+<h2>Agregar Alumno</h2>
+
+<div>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="alumno.nombre">
+</div>
+
+<div>
+  <label for="apellidos">Apellidos:</label>
+  <input type="text" id="apellidos" [(ngModel)]="alumno.apellidos">
+</div>
+
+<div>
+  <label for="curso">Curso:</label>
+  <input type="text" id="curso" [(ngModel)]="alumno.Curso">
+</div>
+
+<div>
+  <label for="tutor1">Tutor 1:</label>
+  <input type="text" id="tutor1" [(ngModel)]="alumno.tutor1">
+</div>
+
+<div>
+  <label for="tutor2">Tutor 2:</label>
+  <input type="text" id="tutor2" [(ngModel)]="alumno.tutor2">
+</div>
+
+<div>
+  <label for="tutorCurso">Tutor de Curso:</label>
+  <input type="text" id="tutorCurso" [(ngModel)]="alumno.tutorCurso">
+</div>
+
+
+<div>
+  <label for="email">Email:</label>
+  <input type="email" id="email" [(ngModel)]="alumno.email">
+</div>
+
+<button (click)="agregarAlumno()">Agregar Alumno</button>
