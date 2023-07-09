@@ -1,1 +1,37 @@
-<p>login works!</p>
+
+<form [formGroup]="loginForm" class="login" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="Input1"> Email </label>
+        <input formControlName="email" type="text" id="Input1">
+        <p *ngIf="(submitted && loginForm?.get('email')?.hasError('required'))">Este campo es requerido</p>
+        <p *ngIf="(submitted && loginForm?.get('email')?.hasError('pattern'))">No cumple el formato de email</p>
+    </div>
+    <div>
+        <label for="Input1" class="form-label"> Password </label>
+        <input formControlName="password" type="text" id="Input1">
+        <p *ngIf="(submitted && loginForm?.get('password')?.hasError('required'))">Este campo es requerido y debe contener al menos 1 mayuscula, 1 minuscula, 1 numero y 1 caracter especial</p>
+       
+    </div>
+    <div>
+        <label for="Select1" class="form-label"> Role </label>
+        <select formControlName="role" id="Select1">
+            Elige un tipo
+            <option value="admin" id="admin">Admin</option>
+            <option value="alumno" id="alumno">Alumno</option>
+            <option value="tutor" id="tutor">Tutor</option>
+            <option value="profesor" id="profesor">Profesor</option>
+            
+        </select>
+        <p *ngIf="(submitted && loginForm?.get('role')?.hasError('required'))">Este campo es requerido </p>
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit"> Login </button>
+    </div>
+    <div *ngIf="(error)">
+        <p>{{error}}</p>
+        
+    </div>
+    <DIV *ngIf="(submitted && !isLogged)">
+        <P><a routerLink="/password">cambiar contraseña</a></P>
+    </DIV>  
+</form>
