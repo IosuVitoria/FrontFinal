@@ -8,6 +8,17 @@
   font-size: 20px;
 }
 
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 body {
   background-color: #fff59d;
 }

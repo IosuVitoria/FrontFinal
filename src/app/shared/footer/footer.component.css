@@ -1,51 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
-.footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    font-family: "Marvel", sans-serif;
+/* Estilo general del footer */
+footer {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo del contenido principal del footer */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Estilo de las secciones del footer */
+.footer-section {
+  flex-basis: 100%;
+  margin-bottom: 20px;
+}
+
+/* Estilo de los títulos de las secciones del footer */
+.footer-section-title {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Estilo de las descripciones de las secciones del footer */
+.footer-section-description {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Estilo de las listas de las secciones del footer */
+.footer-section-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo de los elementos de las listas de las secciones del footer */
+.footer-section-list li {
+  margin-bottom: 5px;
+}
+
+/* Estilo de los enlaces de los elementos de las listas de las secciones del footer */
+.footer-section-list li a {
+  color: #777;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Estilo de los enlaces de los elementos de las listas de las secciones del footer al pasar el mouse */
+.footer-section-list li a:hover {
+  color: #333;
+}
+
+/* Estilo del texto de derechos de autor en el footer */
+.footer-bottom p {
+  color: #777;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+/* Estilo para hacer el footer responsive */
+@media only screen and (min-width: 768px) {
+  /* Mostrar las secciones del footer en 4 columnas */
+  .footer-section {
+    flex-basis: 25%;
   }
-  
-  .footer-content {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .footer h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-links li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  .footer-links li a {
-    color: #000;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links li a:hover {
-    color: #007bff;
-  }
-  .socialMedia{
-    margin-top: 20px;}
-  .imgMedia{
-      margin: 10px;
-    }
-  .footerSpan{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0px 100px 0px 100px;
-    text-decoration: underline;
-    
-  }
+}
