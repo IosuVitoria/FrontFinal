@@ -7,6 +7,7 @@ import { GestionCentroComponent } from './pages/gestion-centro/gestion-centro.co
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { PasswordComponent } from './pages/login/password/password.component';
 
 const routes: Routes = [ 
   
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"gestionCentro", component:GestionCentroComponent},
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
+  {path:"password", component:PasswordComponent},
   {path:"register", component:RegisterComponent}
   
 ];
