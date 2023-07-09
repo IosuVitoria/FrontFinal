@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -15,6 +14,15 @@ import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
 import { ChatComponent } from './pages/chat/chat.component';
+import { CardComponent } from './pages/home/card/card.component';
+import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
+import { CalendarioComponent } from './pages/alumno/calendario/calendario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { PasswordComponent } from './pages/login/password/password.component';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -30,13 +38,27 @@ import { ChatComponent } from './pages/chat/chat.component';
     RegisterComponent,
     NotasComponent,
     SliderComponent,
-    ChatComponent
+    ChatComponent,
+    CardComponent,
+    ActividadesCulturalesComponent,
+    CalendarioComponent,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FullCalendarModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

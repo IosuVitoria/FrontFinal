@@ -1,0 +1,73 @@
+.titulo {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-top: 20px;
+}
+  
+.filtro input {
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 10px;
+    outline: none;
+}
+  
+.filtro input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+
+.alumnos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+}
+  
+.alumnos-table th, .alumnos-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+  
+.alumnos-table th {
+    background-color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #333333;
+    border-radius: 8px 8px 0 0;
+}
+  
+.alumnos-table td {
+    font-family: 'Poppins', sans-serif;
+}
+  
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+  
+.pagination-button {
+    padding: 6px 12px;
+    margin-right: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+  
+.pagination-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  text-align: center;
+}
+
+.accion {
+  cursor: pointer;
+  color: red;
+}
+
+.accion:hover {
+  text-decoration: underline;
+}
