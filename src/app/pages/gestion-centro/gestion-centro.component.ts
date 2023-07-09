@@ -9,8 +9,13 @@ import { Alumno } from '../../models/alumno.model';
 })
 export class GestionCentroComponent implements OnInit {
   alumnos: Alumno[] = [];
+  alumnosFiltrados: Alumno[] = [];
   alumno: Alumno | undefined;
+  alumnoEnEdicion: Alumno | null = null;
   alumnoId!: string | null;
+  currentPage: number = 1;
+  pageSize: number = 5;
+  filtroNombre: string = '';
 
   constructor(private alumnoService: GestionService) { }
 
@@ -22,6 +27,7 @@ export class GestionCentroComponent implements OnInit {
     this.alumnoService.getAlumnos().subscribe(
       (alumnos: Alumno[]) => {
         this.alumnos = alumnos;
+        this.filtrarAlumnos();
         console.log(alumnos)
       },
       (error: any) => {
@@ -70,10 +76,37 @@ export class GestionCentroComponent implements OnInit {
     this.alumnoService.deleteAlumno(id).subscribe(
       () => {
         this.alumnos = this.alumnos.filter(a => a._id !== id);
+        this.filtrarAlumnos();
       },
       (error: any) => {
         console.error(error);
       }
     );
+  }
+
+  filtrarAlumnos(): void {
+    this.alumnosFiltrados = this.alumnos.filter(alumno =>
+      alumno.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase())
+    );
+    this.currentPage = 1;
+  }
+
+  confirmarEliminacion(alumno: Alumno): void {
+    const confirmacion = confirm(`¿Estás seguro de eliminar a ${alumno.nombre}?`);
+    if (confirmacion) {
+      this.deleteAlumno(alumno._id);
+    }
+  }
+
+  iniciarEdicion(alumno: Alumno): void {
+    this.alumnoEnEdicion = { ...alumno };
+  }
+  
+  confirmarActualizacion(): void {
+    const confirmacion = confirm(`¿Estás seguro de actualizar los datos del alumno?`);
+    if (confirmacion && this.alumnoEnEdicion) {
+      this.updateAlumno(this.alumnoEnEdicion);
+      this.alumnoEnEdicion = null;
+    }
   }
 }
