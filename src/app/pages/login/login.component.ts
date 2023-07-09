@@ -62,11 +62,25 @@ export class LoginComponent {
           
         },(error)=>{
           console.log(error);
-          if (error.error.user.isLogged){this.isLogged=error.error.user.isLogged;}
-          if (error.error.user._id){this.authApi.userIdToChangePass=error.error.user._id;}
+          if (error.error.message === "Email no registrado en BBDD"){
+            this.error=error.error.message;
+          }
+          else if (error.error.message === "Password incorrecta"){
+            this.error=error.error.message;
+          }
+          else if (error.error.message === "No coincide el role introducido con el registrado en BBDD"){
+            this.error=error.error.message;
+          }
+          else if (error.error.user.isLogged === false){
+            this.error="Debe cambiar contraseña es el primer login";
+            this.isLogged=error.error.user.isLogged;
+            this.authApi.userIdToChangePass=error.error.user._id;
+          }
+            
+          else{
           
           
-          this.error=error})
+          this.error=error}})
       }
      
       
