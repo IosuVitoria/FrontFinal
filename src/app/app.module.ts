@@ -14,6 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
+import { ChatComponent } from './pages/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SliderComponent } from './pages/home/slider/slider.component';
     LoginComponent,
     RegisterComponent,
     NotasComponent,
-    SliderComponent
+    SliderComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

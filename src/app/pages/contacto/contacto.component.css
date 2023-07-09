@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
 
 .backContact{
     background-image: url(https://afsenovilla.github.io/Disco-Upgrade/img/background.jpg);
-    width: 100vw;
-    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
-    background-attachment: fixed;
-    overflow: scroll;
+    filter: blur(5px);
+    z-index: -1;
  
 }
 .divNav{
@@ -50,22 +52,6 @@
         justify-content: center;
 }
 
-.flags{
-    border: 1px solid transparent;
-    border-radius: 15px;
-    pointer-events: auto;
-    max-width:  moz-fit-content;
-    max-height: moz-fit-content;
-    
-}
-
-.flags:hover{
-    border: 2px solid transparent;
-    border-radius: 15px;
-    scale: 1.25;
-}
-
-
 .contact-element-ES{
     font-family: 'Marvel', sans-serif;
     display: flex;
@@ -76,45 +62,26 @@
     color: white;
 }
 
-.contact-element-EN{
-    font-family: 'Marvel', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    font-weight: bold;
-    color: white;
-}
-.contact-element-DE{
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    font-weight: bold;
-    color: white;
-}
 .contactForm{
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
     line-height: 30px;
-    border: solid black 1.5px;
+    
     border-radius: 15px;
     padding: 40px;
     width: 40vw;
-    background-color:  rgb(180, 180, 180);
+    background-color: transparent;
     font-weight: bold;
     color: black;
 }
- 
- 
     .buttonClass{
         outline: none;
         border: none;
         cursor: pointer;
         display: inline-block;
         margin:  auto;
+        margin-top: 2rem;
         padding: 0.9rem 2.5rem;
         text-align: center;
         background-color: #47AB11;
