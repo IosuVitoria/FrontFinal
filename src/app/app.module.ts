@@ -13,6 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
+import { ChatComponent } from './pages/chat/chat.component';
 import { CardComponent } from './pages/home/card/card.component';
 import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
 import { CalendarioComponent } from './pages/alumno/calendario/calendario.component';
@@ -21,7 +22,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { PasswordComponent } from './pages/login/password/password.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
-
 
 
 @NgModule({
@@ -38,11 +38,11 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
     RegisterComponent,
     NotasComponent,
     SliderComponent,
+    ChatComponent,
     CardComponent,
     ActividadesCulturalesComponent,
     CalendarioComponent,
     PasswordComponent
-    
   ],
   imports: [
     BrowserModule,
