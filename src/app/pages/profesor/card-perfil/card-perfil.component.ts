@@ -21,7 +21,7 @@ export class CardPerfilComponent {
     
      ) {}
   
-  user = JSON.parse(String(sessionStorage.getItem('user')))  
+  user = JSON.parse(String(sessionStorage.getItem('entidad')))  
 
   ngOnInit(): void {
     this.servicio.getProfesor(this.user._id).subscribe((data: any) => {

@@ -48,11 +48,17 @@ export class ProfesorServiceService {
       console.log(this.profesorData);
       console.log(this.profesorId);
       return this.http.put(`${this.urlApi}/profesor/${this.profesorData.id}`, profesorData);
-  
     }
 
-    getAsignatura() {
-      
+    getAsignatura() {      
       return this.http.get(`${this.urlApi}/asignaturas/`);
+    }
+
+    getAlumnos() {      
+      return this.http.get(`${this.urlApi}/alumno/`);
+    }
+
+    getNotas() {      
+      return this.http.get(`${this.urlApi}/notas/`);
     }
 }
