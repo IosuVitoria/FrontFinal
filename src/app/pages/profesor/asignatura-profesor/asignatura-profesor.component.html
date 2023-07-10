@@ -1,32 +1,37 @@
-<h3>Asignaturas impartidas</h3>
-<table>
-  <tr>
-    <ng-container *ngFor="let asignatura of nuevoArray">
-      <th (click)="plantillaAsignatura(asignatura._id)" style="display: inline-block; margin-left: 10px;">{{asignatura.nombre}}</th>
+<div class="contenedor">
+  <h3>Selecciona una asignatura para ver sus alumnos </h3>
+  <div>
+    <ng-container *ngFor="let asignatura of nuevoArray; let i = index">
+      <button class="tab" [class.active]="asignatura._id === asignaturaActiva" (click)="plantillaAsignatura(asignatura._id)">{{asignatura.nombre}}</button>
     </ng-container>
-  </tr>
-</table>
-<h3>Alumnos de la asignatura </h3>
-<table *ngIf="plantillaAlumnos.length > 0">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Curso</th>
-      <th>Nota</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let alumno of plantillaAlumnos" >
-      <td>{{alumno.nombre}}</td>
-      <td>{{alumno.apellidos}}</td> 
-      <td>{{alumno.Curso}}</td>
-      <td> <button (click)="verificarnotas(alumno._id)">ver</button></td>
-    </tr>
-    <span *ngIf="notas.length > 0" ></span>
-    <span *ngFor="let nota of notas">
-      <span style="display: inline-block; margin-left: 10px;">{{nota.nota}} </span>
-    </span> 
-  </tbody>
-</table>
+  </div>
 
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Curso</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alumno of plantillaAlumnos">
+        <td>{{alumno.nombre}}</td>
+        <td>{{alumno.apellidos}}</td>
+        <td>{{alumno.Curso}}</td>
+        <td>
+          <ng-container *ngIf="notas">
+            <ng-container *ngFor="let nota of notas">
+              <span *ngIf="nota.alumno.includes(alumno._id)" style="display: inline-block; margin-left: 10px;">{{nota.nota}}</span>
+            </ng-container>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
