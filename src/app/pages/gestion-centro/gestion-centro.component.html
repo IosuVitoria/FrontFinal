@@ -74,9 +74,9 @@
   <div class="filtro">
     <label for="nombreInput">Filtrar por nombre:</label>
     <input type="text" id="nombreInput" [(ngModel)]="filtroNombre" (input)="filtrarProfesores()" />
-  </div>
+</div>
 
-  <table class="profesor-table">
+<table class="profesor-table">
     <thead>
       <tr>
         <th class="table-header">Nombre</th>
@@ -96,9 +96,9 @@
           <span class="accion" *ngIf="!profesorEnEdicion" (click)="iniciarEdicionProfesor(profesor)">
             <i class="fas fa-pencil-alt"></i> Editar
           </span>
-          <!-- <span class="accion" *ngIf="!profesorEnEdicion" (click)="confirmarEliminacion(profesor)">
+          <span class="accion" *ngIf="!profesorEnEdicion" (click)="confirmarEliminacion(profesor)">
             <i class="fas fa-times"></i> Eliminar
-          </span> -->
+          </span>
         </td>
       </tr>
       <tr *ngIf="profesorEnEdicion">
@@ -132,3 +132,52 @@
 
   <img src="../../../assets/Gestion2.jpg" alt="Imagen de alumnos de huargo" class="imageDivisor">
 </div>
+
+<!-- Gestion de asignaturas - tabla de código -->
+
+<!-- <div>
+<table class="signatures-table">
+  <thead>
+    <tr>
+      <th class="table-header">Nombre</th>
+      <th class="table-header">Profesor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let asignatura of asignaturasFiltradas | slice: (currentPage - 1) * pageSize : currentPage * pageSize">
+      <td>{{ profesor.nombre }}</td>
+      <td>{{ profesor.profesor }}</td>
+      <td>
+        <span class="accion" *ngIf="!asignaturaEnedicion" (click)="iniciarEdicionAsignatura(asignatura)">
+          <i class="fas fa-pencil-alt"></i> Editar
+        </span>
+        <span class="accion" *ngIf="!asignaturaEnedicion" (click)="confirmarEliminacion(asignatura)">
+          <i class="fas fa-times"></i> Eliminar
+        </span>
+      </td>
+    </tr>
+    <tr *ngIf="asignaturaEnEdicion">
+      <td colspan="6">
+        <form (submit)="confirmarActualizacionAsignatura()" class="edicion-form">
+          <h3>Edición datos de asignatura</h3>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="asignaturaEnEdicion.nombre" name="nombre" placeholder="Nombre" required>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="asignaturaEnEdicion.profesor" name="profesor" placeholder="profesor" required>
+          </div>
+          <button type="submit" class="boton-confirmar">Confirmar</button>
+        </form>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div *ngIf="alumnosFiltrados.length > pageSize" class="pagination">
+  <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1" class="pagination-button">Anterior</button>
+  <button [disabled]="currentPage * pageSize >= alumnosFiltrados.length" (click)="currentPage = currentPage + 1" class="pagination-button">Siguiente</button>
+</div>
+
+<img src="../../../assets/Gestion2.jpg" alt="Imagen de alumnos de huargo" class="imageDivisor">
+</div> -->

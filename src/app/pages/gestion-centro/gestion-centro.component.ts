@@ -120,18 +120,21 @@ export class GestionCentroComponent implements OnInit {
     );
   }
 
-  // deleteProfesor(profesor: Profesor): void {
-  //   this.gestionService.deleteProfesor(id).subscribe(
-  //     () => {
-  //       this.profesores = this.profesores.filter(p => p._id !== profesor._id);
-  //       this.filtrarProfesores();
-  //     },
-  //     (error: any) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
-
+  deleteProfesor(profesor: Profesor): void {
+    if (profesor._id) {
+      this.gestionService.deleteProfesor(profesor._id).subscribe(
+        () => {
+          this.profesores = this.profesores.filter(p => p._id !== profesor._id);
+          this.filtrarProfesores();
+        },
+        (error: any) => {
+          console.error(error);
+        }
+      );
+    } else {
+      console.error('Error: ID de profesor no definido');
+    }
+  }
   filtrarAlumnos(): void {
     this.alumnosFiltrados = this.alumnos.filter(alumno =>
       alumno.nombre.toLowerCase().includes(this.filtroNombre.toLowerCase())
@@ -158,17 +161,17 @@ export class GestionCentroComponent implements OnInit {
   }
   
 
-  // confirmarEliminacion(profesor: Profesor): void {
-  //   const confirmacion = confirm(`¿Estás seguro de eliminar a ${profesor.nombre} (ID: ${profesor._id})?`);
-  //   if (confirmacion) {
-  //     if (profesor._id) {
-  //       this.deleteProfesor(profesor._id);
-  //     } else {
-  //       console.error('Error: ID de profesor no definido');
-  //     }
-  //   }
-  // }
-
+  confirmarEliminacion(profesor: Profesor): void {
+    const confirmacion = confirm(`¿Estás seguro de eliminar a ${profesor.nombre} (ID: ${profesor._id})?`);
+    if (confirmacion) {
+      if (profesor._id) {
+        this.deleteProfesor(profesor);
+      } else {
+        console.error('Error: ID de profesor no definido');
+      }
+    }
+  }
+  
   iniciarEdicionAlumno(alumno: Alumno): void {
     this.alumnoEnEdicion = { ...alumno };
   }
