@@ -30,6 +30,7 @@ import { AsignaturaProfesorComponent } from './pages/profesor/asignatura-profeso
 
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
+import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
 
 
 
@@ -59,7 +60,8 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
 
     
     NuevoAlumnoComponent,
-    NuevoProfesorComponent
+    NuevoProfesorComponent,
+    NuevaAsignaturaComponent
     
 
   ],

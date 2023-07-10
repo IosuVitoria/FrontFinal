@@ -11,6 +11,7 @@ import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { PasswordComponent } from './pages/login/password/password.component';
 import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
+import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
 
 
 const routes: Routes = [ 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:"gestionCentro", component:GestionCentroComponent},
   {path:"nuevoalumno", component:NuevoAlumnoComponent},
   {path:"nuevoprofesor", component:NuevoProfesorComponent},
+  {path:"nuevaasignatura", component:NuevaAsignaturaComponent},
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},
