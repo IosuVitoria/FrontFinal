@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { PasswordComponent } from './pages/login/password/password.component';
+import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
 
 const routes: Routes = [ 
   
@@ -18,8 +19,8 @@ const routes: Routes = [
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},
-  {path:"register", component:RegisterComponent}
-  
+  {path:"register", component:RegisterComponent},
+  {path:"perfilProfesor", component:FormDatosComponent},
 ];
 
 @NgModule({

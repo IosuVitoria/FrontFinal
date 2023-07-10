@@ -58,7 +58,7 @@ export class LoginComponent {
           sessionStorage.setItem('token', data.token);
           sessionStorage.setItem('user', JSON.stringify(data.user));
           
-          this.router.navigate(['/home']);
+          this.router.navigate(['/profesor']);
           
         },(error)=>{
           console.log(error);
