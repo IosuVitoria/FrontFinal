@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
+import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-
     CardComponent,
     ActividadesCulturalesComponent,
     CalendarioComponent,
-    NuevoAlumnoComponent
+    NuevoAlumnoComponent,
+    NuevoProfesorComponent
     
   ],
   imports: [

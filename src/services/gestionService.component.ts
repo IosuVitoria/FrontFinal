@@ -52,9 +52,9 @@ export class GestionService {
     return this.http.post<Profesor>(this.apiUrlP, profesor);
   }
 
-  updateProfesor(profesor: Profesor): Observable<Alumno> {
+  updateProfesor(profesor: Profesor): Observable<Profesor> {
     const url = `${this.apiUrlP}/${profesor._id}`;
-    return this.http.put<Alumno>(url, profesor);
+    return this.http.put<Profesor>(url, profesor);
   }
 
   deleteProfesor(id: Profesor): Observable<any> {
