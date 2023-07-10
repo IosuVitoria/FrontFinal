@@ -44,7 +44,7 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
     CardComponent,
     ActividadesCulturalesComponent,
     CalendarioComponent,
-    PasswordComponent
+    PasswordComponent,
     NuevoAlumnoComponent,
     NuevoProfesorComponent
     
