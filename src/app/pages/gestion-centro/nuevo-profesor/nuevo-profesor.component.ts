@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { GestionService } from '../../../../services/gestionService.component';
-import { Profesor } from '../../../models/profesor.model';
+import { ProfesorCreate } from '../../../models/profesor.model';
 
 @Component({
   selector: 'app-nuevo-profesor',
@@ -9,8 +9,7 @@ import { Profesor } from '../../../models/profesor.model';
 })
 export class NuevoProfesorComponent {
 
-  profesor: Profesor = {
-    _id:'',
+  profesor: ProfesorCreate = {
     nombre: '',
     apellidos: '',
     email: '',
@@ -21,7 +20,7 @@ export class NuevoProfesorComponent {
 
   agregarProfesor(): void {
     this.gestionService.addProfesor(this.profesor).subscribe(
-      (newProfesor: Profesor) => {
+      (newProfesor: ProfesorCreate) => {
         console.log('Profesor agregado:', newProfesor);
         // Aquí puedes realizar cualquier acción necesaria después de agregar el profesor, como redirigir a la lista de profesores.
       },

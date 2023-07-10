@@ -48,7 +48,7 @@ export class GestionService {
     return this.http.get<Profesor>(url);
   }
 
-   addProfesor(profesor: Profesor): Observable<Profesor> {
+  addProfesor(profesor: Profesor): Observable<Profesor> {
     return this.http.post<Profesor>(this.apiUrlP, profesor);
   }
 
