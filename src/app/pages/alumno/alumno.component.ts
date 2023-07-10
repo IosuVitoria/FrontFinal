@@ -12,10 +12,9 @@ export class AlumnoComponent implements OnInit {
   alumno: Alumno | undefined;
   alumnoId!: string | null;
 
-  constructor(
-    private route: ActivatedRoute,
-    private alumnoService: AlumnoService
-  ) { }
+  constructor(private route: ActivatedRoute,private alumnoService: AlumnoService) { }
+  
+
 
   ngOnInit(): void {
     this.alumnoId = this.route.snapshot.paramMap.get('id');
