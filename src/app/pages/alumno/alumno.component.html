@@ -15,8 +15,6 @@
       <ul>
         <li *ngFor="let asignatura of alumno.asignaturas">{{ asignatura }}</li>
       </ul>
-      <p><strong>Fecha de creación:</strong> {{ alumno.createdAt }}</p>
-      <p><strong>Fecha de actualización:</strong> {{ alumno.updatedAt }}</p>
     </div>
     <div *ngIf="!alumno" class="no-data">
       <p>No se encontraron datos para el alumno especificado.</p>
