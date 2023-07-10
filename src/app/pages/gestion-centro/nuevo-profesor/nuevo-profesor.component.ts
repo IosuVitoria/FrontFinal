@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { GestionService } from '../../../../services/gestionService.component';
 import { ProfesorCreate } from '../../../models/profesor.model';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-nuevo-profesor',
@@ -14,15 +16,15 @@ export class NuevoProfesorComponent {
     apellidos: '',
     email: '',
     telefono: ''
-  };
+  }
 
-  constructor(private gestionService: GestionService) { }
+  constructor(private gestionService: GestionService, private router: Router) { }
 
   agregarProfesor(): void {
     this.gestionService.addProfesor(this.profesor).subscribe(
       (newProfesor: ProfesorCreate) => {
         console.log('Profesor agregado:', newProfesor);
-        // Aquí puedes realizar cualquier acción necesaria después de agregar el profesor, como redirigir a la lista de profesores.
+        
       },
       (error: any) => {
         console.error('Error al agregar profesor:', error);

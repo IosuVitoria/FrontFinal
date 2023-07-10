@@ -1,18 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AsignaturaService } from '../../../../services/asignaturaService.component';
 import { GestionService } from '../../../../services/gestionService.component';
-
-interface Alumno {
-  _id: string; // Agrega la propiedad _id con el tipo adecuado
-  nombre: string;
-  apellidos: string;
-  Curso: string;
-  tutor1: string;
-  tutor2: string;
-  tutorCurso: string;
-  asignaturas: string[]; // Aquí se almacenarán los ID de las asignaturas
-  email: string;
-}
+import { AlumnoCreate } from 'src/app/models/alumno.model';
 
 @Component({
   selector: 'app-nuevo-alumno',
@@ -21,15 +10,14 @@ interface Alumno {
 })
 export class NuevoAlumnoComponent implements OnInit {
   asignaturas: any[] = [];
-  alumno: Alumno = {
-    _id:"",
+  alumno: AlumnoCreate = {
     nombre: '',
     apellidos: '',
     Curso: '',
     tutor1: '',
     tutor2: '',
     tutorCurso: '',
-    asignaturas: [], // Aquí se almacenarán los ID de las asignaturas
+    asignaturas: [], 
     email: ''
   };
 
@@ -55,13 +43,12 @@ export class NuevoAlumnoComponent implements OnInit {
   }
 
   agregarAlumno(): void {
-    console.log(this.alumno);
     this.gestionService.addAlumno(this.alumno).subscribe(
-      (alumno) => {
-        console.log('Alumno agregado:', alumno);
+      (newAlumno: AlumnoCreate) => {
+        console.log('Alumno agregado:', newAlumno);
       },
-      (error) => {
-        console.log('Error al agregar el alumno:', error);
+      (error: any) => {
+        console.error('Error al agregar profesor:', error);
       }
     );
   }
