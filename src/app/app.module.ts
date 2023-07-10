@@ -20,8 +20,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
-import { CardPerfilComponent } from './pages/profesor/card-perfil/card-perfil.component';
-import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +37,8 @@ import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form
     SliderComponent,
     CardComponent,
     ActividadesCulturalesComponent,
-    CalendarioComponent
-    ,
-    CardPerfilComponent,
-    FormDatosComponent
+    CalendarioComponent,
+   
   ],
   imports: [
     BrowserModule,
