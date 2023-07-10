@@ -13,12 +13,15 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotasComponent } from './pages/alumno/notas/notas.component';
 import { SliderComponent } from './pages/home/slider/slider.component';
+import { ChatComponent } from './pages/chat/chat.component';
 import { CardComponent } from './pages/home/card/card.component';
 import { ActividadesCulturalesComponent } from './pages/actividades-culturales/actividades-culturales.component';
 import { CalendarioComponent } from './pages/alumno/calendario/calendario.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { PasswordComponent } from './pages/login/password/password.component';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 
@@ -37,9 +40,11 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
     RegisterComponent,
     NotasComponent,
     SliderComponent,
+    ChatComponent,
     CardComponent,
     ActividadesCulturalesComponent,
     CalendarioComponent,
+    PasswordComponent
     NuevoAlumnoComponent,
     NuevoProfesorComponent
     
@@ -48,10 +53,17 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FullCalendarModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

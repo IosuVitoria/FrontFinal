@@ -1,19 +1,45 @@
-<div class="containernav">
-    <nav>
-      <div>
-      <a routerLink="/home">Home</a>
+<header class="header">
+  <div class="logo">
+    <a routerLink="/home"
+      ><img
+        src="https://img.icons8.com/pulsar-color/96/school.png"
+        alt="school"
+    /></a>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <!-- <li><a routerLink="/home">Inicio</a></li> -->
+      <li><a routerLink="/alumno">Alumno</a></li>
+      <li><a routerLink="/profesor">Profesor</a></li>
+      <li><a routerLink="/gestionCentro">Gestión del centro</a></li>
+      <li><a routerLink="/contact">Contacto</a></li>
+    </ul>
+  </nav>
+  <a routerLink="/login" class="btn"><button>Iniciar sesión</button></a>
+  <a onclick="openNav()" class="menu" routerLink="#"><button>Menu</button></a>
+
+  <div class="overlay menu" id="mobile-menu">
+    <a onclick="closeNav()" routerLink="" class="close">&times;</a>
+    <div class="overlay-content">
+      <!-- <a routerLink="/home">Inicio</a> -->
       <a routerLink="/alumno">Alumno</a>
       <a routerLink="/profesor">Profesor</a>
-      <a routerLink="/gestionCentro">Gestion de centro</a>
-      <a routerLink="/contact">Contacto</a> 
-      </div>
-      <img class="logo" src="../../../assets/logo.png" alt="logo colegio">
-      <div>
-      <a routerLink="/login">Login</a>
-      <a routerLink="/register" class = "register">Registro</a> 
-      </div>
-    </nav>
-    <div class="user-access">
-      <!-- Aquí puedes agregar el contenido del acceso de usuario -->
+      <a routerLink="/gestionCentro">Gestión del centro</a>
+      <a routerLink="/contact">Contacto</a>
+      <a routerLink="/login">Iniciar Sesión</a>
     </div>
   </div>
+  <div class="user-access">
+    <!-- Aquí puedes agregar el contenido del acceso de usuario -->
+  </div>
+</header>
+
+<script>
+  function openNav() {
+    document.getElementById("mobile-menu").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("mobile-menu").style.width = "0%";
+  }
+</script>

@@ -9,6 +9,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
+import { PasswordComponent } from './pages/login/password/password.component';
 
 
 const routes: Routes = [ 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:"nuevoprofesor", component:NuevoProfesorComponent},
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
+  {path:"password", component:PasswordComponent},
   {path:"register", component:RegisterComponent}
   
 ];
