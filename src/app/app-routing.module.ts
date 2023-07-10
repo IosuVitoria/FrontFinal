@@ -7,7 +7,10 @@ import { GestionCentroComponent } from './pages/gestion-centro/gestion-centro.co
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
+import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { PasswordComponent } from './pages/login/password/password.component';
+
 
 const routes: Routes = [ 
   
@@ -15,6 +18,8 @@ const routes: Routes = [
   {path:"alumno", component:AlumnoComponent},
   {path:"profesor", component:ProfesorComponent},
   {path:"gestionCentro", component:GestionCentroComponent},
+  {path:"nuevoalumno", component:NuevoAlumnoComponent},
+  {path:"nuevoprofesor", component:NuevoProfesorComponent},
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},
