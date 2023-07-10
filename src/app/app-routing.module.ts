@@ -10,6 +10,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { PasswordComponent } from './pages/login/password/password.component';
+import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
 
 
@@ -25,8 +26,8 @@ const routes: Routes = [
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},
-  {path:"register", component:RegisterComponent}
-  
+  {path:"register", component:RegisterComponent},
+  {path:"perfilProfesor", component:FormDatosComponent},
 ];
 
 @NgModule({

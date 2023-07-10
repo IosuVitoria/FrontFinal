@@ -59,7 +59,7 @@ export class LoginComponent {
           sessionStorage.setItem('user', JSON.stringify(data.user));
           sessionStorage.setItem('entidad', JSON.stringify(data.entidad));
           
-          this.router.navigate(['/home']);
+          this.router.navigate(['/profesor']);
           
         },(error)=>{
           console.log(error);
