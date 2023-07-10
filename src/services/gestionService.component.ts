@@ -2,35 +2,64 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Alumno } from '../app/models/alumno.model';
+import { Profesor } from '../app/models/profesor.model';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class GestionService {
-  private apiUrl = 'http://localhost:5000/alumno';
+  private apiUrlA = 'http://localhost:5000/alumno';
+  private apiUrlP = 'http://localhost:5000/profesor'
 
   constructor(private http: HttpClient) { }
 
   getAlumnos(): Observable<Alumno[]> {
-    return this.http.get<Alumno[]>(this.apiUrl);
+    return this.http.get<Alumno[]>(this.apiUrlA);
   }
 
   getAlumno(id: string): Observable<Alumno> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrlA}/${id}`;
     return this.http.get<Alumno>(url);
   }
 
-  addAlumno(alumno: Alumno): Observable<Alumno> {
-    return this.http.post<Alumno>(this.apiUrl, alumno);
+   addAlumno(alumno: Alumno): Observable<Alumno> {
+    return this.http.post<Alumno>(this.apiUrlA, alumno);
   }
 
   updateAlumno(alumno: Alumno): Observable<Alumno> {
-    const url = `${this.apiUrl}/${alumno._id}`;
+    const url = `${this.apiUrlA}/${alumno._id}`;
     return this.http.put<Alumno>(url, alumno);
   }
 
   deleteAlumno(id: string): Observable<any> {
-    const url = `${this.apiUrl}/${id}`;
+    const url = `${this.apiUrlA}/${id}`;
+    return this.http.delete(url);
+  }
+
+//Métodos para el servicio a profesores.
+
+  getProfesores(): Observable<Profesor[]> {
+    return this.http.get<Profesor[]>(this.apiUrlP);
+  }
+
+  getProfesor(id: string): Observable<Profesor> {
+    const url = `${this.apiUrlP}/${id}`;
+    return this.http.get<Profesor>(url);
+  }
+
+  addProfesor(profesor: Profesor): Observable<Profesor> {
+    return this.http.post<Profesor>(this.apiUrlP, profesor);
+  }
+
+  updateProfesor(profesor: Profesor): Observable<Profesor> {
+    const url = `${this.apiUrlP}/${profesor._id}`;
+    return this.http.put<Profesor>(url, profesor);
+  }
+
+  deleteProfesor(id: string): Observable<any> {
+    const url = `${this.apiUrlP}/${id}`;
     return this.http.delete(url);
   }
 }
