@@ -24,6 +24,7 @@ import { PasswordComponent } from './pages/login/password/password.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
+import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
     CalendarioComponent,
     PasswordComponent,
     NuevoAlumnoComponent,
-    NuevoProfesorComponent
+    NuevoProfesorComponent,
+    NuevaAsignaturaComponent
     
   ],
   imports: [
