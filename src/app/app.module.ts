@@ -22,6 +22,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { PasswordComponent } from './pages/login/password/password.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
+import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 
 
 @NgModule({
@@ -43,6 +45,9 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
     ActividadesCulturalesComponent,
     CalendarioComponent,
     PasswordComponent
+    NuevoAlumnoComponent,
+    NuevoProfesorComponent
+    
   ],
   imports: [
     BrowserModule,

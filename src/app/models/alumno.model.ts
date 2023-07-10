@@ -8,7 +8,5 @@ export interface Alumno {
     tutorCurso: string;
     asignaturas: string[];
     email: string;
-    createdAt: string;
-    updatedAt: string;
-    __v: number;
   }
+
