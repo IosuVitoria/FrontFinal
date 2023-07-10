@@ -149,9 +149,14 @@ export class GestionCentroComponent implements OnInit {
   confirmarEliminacionAlumno(alumno: Alumno): void {
     const confirmacion = confirm(`¿Estás seguro de eliminar a ${alumno.nombre}?`);
     if (confirmacion) {
-      this.deleteAlumno(alumno._id);
+      if (alumno._id) {
+        this.deleteAlumno(alumno._id);
+      } else {
+        console.error('Error: ID de alumno no definido');
+      }
     }
   }
+  
 
   confirmarEliminacion(profesor: Profesor): void {
     const confirmacion = confirm(`¿Estás seguro de eliminar a ${profesor.nombre} (ID: ${profesor._id})?`);
