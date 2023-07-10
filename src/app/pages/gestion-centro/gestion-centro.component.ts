@@ -120,17 +120,17 @@ export class GestionCentroComponent implements OnInit {
     );
   }
 
-  deleteProfesor(profesor: Profesor): void {
-    this.gestionService.deleteProfesor(profesor).subscribe(
-      () => {
-        this.profesores = this.profesores.filter(p => p._id !== profesor._id);
-        this.filtrarProfesores();
-      },
-      (error: any) => {
-        console.error(error);
-      }
-    );
-  }
+  // deleteProfesor(profesor: Profesor): void {
+  //   this.gestionService.deleteProfesor(id).subscribe(
+  //     () => {
+  //       this.profesores = this.profesores.filter(p => p._id !== profesor._id);
+  //       this.filtrarProfesores();
+  //     },
+  //     (error: any) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
 
   filtrarAlumnos(): void {
     this.alumnosFiltrados = this.alumnos.filter(alumno =>
@@ -158,12 +158,16 @@ export class GestionCentroComponent implements OnInit {
   }
   
 
-  confirmarEliminacion(profesor: Profesor): void {
-    const confirmacion = confirm(`¿Estás seguro de eliminar a ${profesor.nombre} (ID: ${profesor._id})?`);
-    if (confirmacion) {
-      this.deleteProfesor(profesor);
-    }
-  }
+  // confirmarEliminacion(profesor: Profesor): void {
+  //   const confirmacion = confirm(`¿Estás seguro de eliminar a ${profesor.nombre} (ID: ${profesor._id})?`);
+  //   if (confirmacion) {
+  //     if (profesor._id) {
+  //       this.deleteProfesor(profesor._id);
+  //     } else {
+  //       console.error('Error: ID de profesor no definido');
+  //     }
+  //   }
+  // }
 
   iniciarEdicionAlumno(alumno: Alumno): void {
     this.alumnoEnEdicion = { ...alumno };

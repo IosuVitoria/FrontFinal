@@ -24,7 +24,6 @@ export class NuevoProfesorComponent {
     this.gestionService.addProfesor(this.profesor).subscribe(
       (newProfesor: ProfesorCreate) => {
         console.log('Profesor agregado:', newProfesor);
-        this.router.navigate(['/gestionCentro']);
         
       },
       (error: any) => {

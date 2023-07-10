@@ -58,7 +58,7 @@ export class GestionService {
     return this.http.put<Profesor>(url, profesor);
   }
 
-  deleteProfesor(id: Profesor): Observable<any> {
+  deleteProfesor(id: string): Observable<any> {
     const url = `${this.apiUrlP}/${id}`;
     return this.http.delete(url);
   }
