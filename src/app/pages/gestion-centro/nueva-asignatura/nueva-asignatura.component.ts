@@ -18,7 +18,7 @@ export class NuevaAsignaturaComponent implements OnInit {
   constructor(private gestionService: GestionService) { }
 
   ngOnInit(): void {
-    this.getProfesores();
+    this.getProfesores(); 
   }
 
   getProfesores(): void {
