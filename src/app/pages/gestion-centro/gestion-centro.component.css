@@ -1,172 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 20px;
 }
 
-.titulo {
-  font-family: "Poppins", sans-serif;
-  color: #333;
-  margin-top: 20px;
-}
-
-.boton-nuevo,
-.boton-confirmar,
-.pagination-button {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  color: #1b3039;
-  background-color: #eceff1;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transform: scale(1);
-  transition: transform 0.3s ease, color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
-}
-
-.boton-nuevo {
-  margin-bottom: 15px;
-}
-
-.filtro {
+.heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
-.filtro label {
-  font-family: "Poppins", sans-serif;
-  color: #333;
-  margin-right: 10px;
+.carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.filtro input[type="text"] {
-  font-family: "Poppins", sans-serif;
-  border: 1px solid #ccc;
+.card {
+  width: calc(20% - 12px);
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 0.5em;
-  outline: none;
-  width: auto;
-  max-width: 10em;
-  box-sizing: border-box;
-  margin-right: 10px;
-  margin-left: 10px;
+  overflow: hidden;
 }
 
-.alumnos-table,
-.profesor-table {
+.card-image img {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.table-header {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  color: #333333;
-  border-radius: 8px 8px 0 0;
-}
-
-.alumnos-table th,
-.alumnos-table td,
-.profesor-table th,
-.profesor-table td {
-  border: 1px solid black;
-  padding: 8px;
-  font-family: "Poppins", sans-serif;
-}
-
-.accion {
-  cursor: pointer;
-  color: red;
-}
-
-.edicion-form {
-  margin-top: 20px;
-}
-
-.edicion-form h3 {
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 10px;
-}
-
-.form-group {
-  margin-bottom: 10px;
-}
-
-.form-group input {
-  font-family: "Poppins", sans-serif;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0.5em;
-  outline: none;
-  width: 100%;
-  box-sizing: border-box;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.boton-confirmar {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  color: #1b3039;
-  background-color: #eceff1;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transform: scale(1);
-  transition: transform 0.3s ease, color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
-}
-
-.pagination {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.pagination-button {
-  display: inline-block;
-  padding: 6px 12px;
-  font-family: "Poppins", sans-serif;
-  text-decoration: none;
-  background-color: #3498db;
-  color: #fff;
-  border-radius: 20px;
-  margin-right: 5px;
-}
-
-.pagination-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.imageDivisor {
-  height: auto;
-  max-width: 100%;
-  margin: 20px auto;
-  border-radius: 100px;
-  display: block;
-  width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
+  display: block;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 10px;
-  }
+.card-content {
+  padding: 10px;
+}
 
-  .filtro input[type="text"] {
-    max-width: none;
-  }
+h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 
-  .form-group input {
-    max-width: none;
-  }
+.autor {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.contenido {
+  font-size: 14px;
+}
+
+.pincha {
+  font-size: 12px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }

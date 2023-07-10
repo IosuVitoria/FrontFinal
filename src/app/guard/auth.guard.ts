@@ -21,6 +21,12 @@ export class authGuard implements CanActivate {
     {
       this.router.navigate(['/login']);
     }
+    
+    this.authApi.checkSession().subscribe((data:any)=>
+      data._id === null && this.router.navigate(['/login'])
+    );
+    
+
     return true;
   }
   
