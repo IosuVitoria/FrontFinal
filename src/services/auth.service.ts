@@ -47,7 +47,9 @@ export class AuthService {
     // localStorage.removeItem('user');
     // sessionStorage.clear();
     sessionStorage.removeItem('token');
-    sessionStorage.removeItem('user')
+    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('entidad');
+
   }
 
 
