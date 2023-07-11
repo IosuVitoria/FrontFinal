@@ -14,7 +14,8 @@ export class AuthService {
   isclicked:boolean=false;
   userIdToChangePass:string="";
   tempUser!:UserI;
-  console=console
+  console=console;
+  bannedByGuard:boolean=false;
   constructor(private http: HttpClient) { }
   
   register(user: UserI){
@@ -47,7 +48,9 @@ export class AuthService {
     // localStorage.removeItem('user');
     // sessionStorage.clear();
     sessionStorage.removeItem('token');
-    sessionStorage.removeItem('user')
+    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('entidad');
+
   }
 
   getUsuario(){
