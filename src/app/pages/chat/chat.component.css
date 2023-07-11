@@ -8,7 +8,7 @@
 }
 
 .card-header{
-    background-color: blue;
+    background-color: #1b3039;
     color: white;
     font-weight: 700;
 }
@@ -19,5 +19,30 @@ img{
 
 .card-body{
     padding: 0.5rem;
+    background-image: url('https://img.freepik.com/premium-vector/chat-seamless-pattern-with-speech-bubbles-vector-background_104589-2053.jpg');
+    padding-bottom: 300px;
+}
 
+.imgEnviar:active{
+    transform: scale(0.9);
+}
+
+.enviado{
+    display: block;
+    float: right;
+    background-color: #1b3039;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
+    padding: 2;
+}
+.recibido{
+    display: block;
+    float: left;
+    background-color: #1b85b3;
+    color: white;
+    min-width: 50.01%;
+    border-radius: 10px;
+    text-align: left;
 }
