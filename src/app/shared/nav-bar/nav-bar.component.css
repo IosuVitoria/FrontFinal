@@ -37,7 +37,8 @@ body {
 }
 
 .header .logo img {
-  height: 70px;
+  height: 80px;
+  display: flex;
   width: auto;
   transition: all 0.3s ease;
 }
@@ -65,7 +66,7 @@ body {
 }
 
 .header .nav-links li a:hover {
-  color: #ffbc0e;
+  color: #77d4fc;
 }
 
 .menu {
@@ -87,7 +88,7 @@ body {
 .header .btn button:hover,
 .header .menu button:hover {
   background-color: #e2f1f8;
-  color: #ffbc0e;
+  color: #4b91f1;
   transform: scale(1.1);
 }
 

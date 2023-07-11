@@ -57,7 +57,8 @@
 }
 
 .alumnos-table,
-.profesor-table {
+.profesor-table,
+.asignatura-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -74,7 +75,9 @@
 .alumnos-table th,
 .alumnos-table td,
 .profesor-table th,
-.profesor-table td {
+.profesor-table td,
+.asignatura-table th,
+.asignatura-table td {
   border: 1px solid black;
   padding: 8px;
   font-family: "Poppins", sans-serif;
