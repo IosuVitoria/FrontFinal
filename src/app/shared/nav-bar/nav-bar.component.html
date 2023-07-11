@@ -1,10 +1,10 @@
 <header class="header">
   <div class="logo">
-    <a routerLink="/home"
-      ><img src="../../../assets/nuevoLogo.png" alt="school"
-    /></a>
+    <a routerLink="/home">
+      <img src="../../../assets/nuevoLogo.png" alt="school">
+    </a>
   </div>
-  <nav>
+  <nav class="desktop-menu">
     <ul class="nav-links">
       <!-- <li><a routerLink="/home">Inicio</a></li> -->
       <li><a routerLink="/alumno">Alumno</a></li>
@@ -13,21 +13,39 @@
       <li><a routerLink="/contact">Contacto</a></li>
     </ul>
   </nav>
-  <a routerLink="/login" class="btn"><button>Iniciar sesión</button></a>
-  <a onclick="openNav()" class="menu" routerLink="#"><button>Menu</button></a>
-
-  <div class="overlay menu" id="mobile-menu">
-    <a onclick="closeNav()" routerLink="" class="close">&times;</a>
-    <div class="overlay-content">
-      <!-- <a routerLink="/home">Inicio</a> -->
-      <a routerLink="/alumno">Alumno</a>
-      <a routerLink="/profesor">Profesor</a>
-      <a routerLink="/gestionCentro">Gestión del centro</a>
-      <a routerLink="/contact">Contacto</a>
-      <a routerLink="/login">Iniciar Sesión</a>
-    </div>
+ 
+  <div *ngIf="!authApi.getToken()" class="nav__login">
+    <a routerLink="/login" class="btn">
+      <button>Iniciar sesión</button>
+    </a>
   </div>
-  <div class="user-access">
-    <!-- Aquí puedes agregar el contenido del acceso de usuario -->
+  <p class="Saludo" *ngIf="authApi.getToken()">Bienvenid@ {{authApi.getUsuario()}}</p>
+  <div>
+    <a routerLink="/home" class="btn">
+      <button *ngIf="authApi.getToken()" (click)="logout()">Logout</button>
+    </a>
+  </div>
+  <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+    <img src="https://cdn-icons-png.flaticon.com/512/5344/5344581.png" alt="Menu" class="icono">
+  </div>
+  <!-- Mobile dropdown menu -->
+  <div class="dropdown-menu" [class.show]="isMobileMenuOpen">
+    <ul>
+      <li><a routerLink="/alumno">Alumno</a></li>
+      <li><a routerLink="/profesor">Profesor</a></li>
+      <li><a routerLink="/gestionCentro">Gestión del centro</a></li>
+      <li><a routerLink="/contact">Contacto</a></li>
+    </ul>
+    <div *ngIf="!authApi.getToken()" class="nav__login">
+      <a routerLink="/login" class="btn">
+        <button>Iniciar sesión</button>
+      </a>
+    </div>
+    <p class="Saludo" *ngIf="authApi.getToken()">Bienvenid@ {{authApi.getUsuario()}}</p>
+    <div>
+      <a routerLink="/home" class="btn">
+        <button *ngIf="authApi.getToken()" (click)="logout()">Logout</button>
+      </a>
+    </div>
   </div>
 </header>

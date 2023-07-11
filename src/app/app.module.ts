@@ -31,7 +31,7 @@ import { AsignaturaProfesorComponent } from './pages/profesor/asignatura-profeso
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -51,14 +51,11 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
     ChatComponent,
     CardComponent,
     ActividadesCulturalesComponent,
-    CalendarioComponent,
-   
+    CalendarioComponent,   
     PasswordComponent,
-         CardPerfilComponent,
-         FormDatosComponent,
-         AsignaturaProfesorComponent,
-
-    
+    CardPerfilComponent,
+    FormDatosComponent,
+    AsignaturaProfesorComponent,    
     NuevoAlumnoComponent,
     NuevoProfesorComponent,
     NuevaAsignaturaComponent
@@ -72,6 +69,8 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
     ReactiveFormsModule,
     HttpClientModule,
     FullCalendarModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     {
