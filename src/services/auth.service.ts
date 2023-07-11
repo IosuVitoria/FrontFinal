@@ -14,7 +14,8 @@ export class AuthService {
   isclicked:boolean=false;
   userIdToChangePass:string="";
   tempUser!:UserI;
-  console=console
+  console=console;
+  bannedByGuard:boolean=false;
   constructor(private http: HttpClient) { }
   
   register(user: UserI){
