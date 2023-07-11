@@ -4,20 +4,21 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProfesorServiceService {
   console=console
   urlApi: string = "http://localhost:5000"
   profesor: any[] = [];
   id!:number;
   profesorId!: number;
- 
+  
+
   public profesorData = { 
     id:'',
     email: '',
     telefono: '',  
     nombre: '', 
-    apellidos: ''
-      
+    apellidos: ''      
   };
 
   constructor(private http: HttpClient) {} 
@@ -60,5 +61,11 @@ export class ProfesorServiceService {
 
     getNotas() {      
       return this.http.get(`${this.urlApi}/notas/`);
+    }
+    putNota(notaId: string, notaData: any) {
+      return this.http.put(`${this.urlApi}/notas/${notaId}`, notaData);
+    }    
+    postNotas(notaData: any){
+      return this.http.post(`${this.urlApi}/notas/`, notaData);
     }
 }
