@@ -12,6 +12,7 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
 import { PasswordComponent } from './pages/login/password/password.component';
 import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
+import { authGuard } from './guard/auth.guard';
 
 
 const routes: Routes = [ 
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"alumno", component:AlumnoComponent},
   {path:"profesor", component:ProfesorComponent},
-  {path:"gestionCentro", component:GestionCentroComponent},
+  {path:"gestionCentro", component:GestionCentroComponent, canActivate:[authGuard]},
   {path:"nuevoalumno", component:NuevoAlumnoComponent},
   {path:"nuevoprofesor", component:NuevoProfesorComponent},
   {path:"nuevaasignatura", component:NuevaAsignaturaComponent},
