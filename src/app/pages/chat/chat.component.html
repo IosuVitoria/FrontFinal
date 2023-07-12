@@ -1,29 +1,33 @@
-
 <div class="card text-center cardContainer" *ngIf="id">
-  <div class="card-header">
-    Chat
-  </div>
+  <div class="card-header">Chat</div>
   <div class="card-body">
     <div class="contenedorDeMensajes h-100">
-      <p *ngFor="let mensaje of mensajes" class="p-2"
-      [ngClass]="(id==mensaje.emisor)? 'enviado': 'recibido'">
-      {{mensaje.texto}}
+      <p
+        *ngFor="let mensaje of mensajes"
+        class="p-2"
+        [ngClass]="id == mensaje.emisor ? 'enviado' : 'recibido'"
+      >
+        {{ mensaje.texto }}
       </p>
     </div>
   </div>
-
-  <form class="card-footer text-muted input-group" (ngSubmit)="enviarMensaje()">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Ingrese su mensaje"
-      [(ngModel)]="nuevoMensaje"
-      [ngModelOptions]="{ standalone: true }"
-    />
-    <div class="input-group-append" (click)="enviarMensaje()">
-      <span class="input-group-text" id="basic-addon2">
-        <img class="imgEnviar" src="../../../assets/send.png" alt=" enviar" />
-      </span>
-    </div>
-  </form>
+  <div class="writeMessage">
+    <form
+      class="card-footer text-muted input-group"
+      (ngSubmit)="enviarMensaje()"
+    >
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingrese su mensaje"
+        [(ngModel)]="nuevoMensaje"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <div class="input-group-append" (click)="enviarMensaje()">
+        <span class="input-group-text" id="basic-addon2">
+          <img class="imgEnviar" src="../../../assets/send.png" alt=" enviar" />
+        </span>
+      </div>
+    </form>
+  </div>
 </div>
