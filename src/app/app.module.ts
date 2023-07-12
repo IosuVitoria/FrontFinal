@@ -37,6 +37,10 @@ import { AvisoComponent } from './pages/login/aviso/aviso.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
 
+import { NotfoundComponent } from './shared/notfound/notfound.component';
+import { DeporteComponent } from './shared/footer/deporte/deporte.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +74,12 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
     AvisoComponent,
     NoticiasComponent,
     GaleriaComponent,
+
+    NotfoundComponent,
+    DeporteComponent
+
+
+
   ],
   imports: [
     BrowserModule,
