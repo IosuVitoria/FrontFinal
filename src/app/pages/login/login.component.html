@@ -12,7 +12,10 @@
   </div>
   <div>
     <label for="Input1" class="form-label"> Contraseña </label>
-    <input formControlName="password" type="text" id="Input1" />
+    <span class="span__pass">
+      <input formControlName="password" type="password" id="Input1" [type]="hide ? 'password' : 'text'"/>
+      <img src="../../../assets/eye_ico.png" class="eyeico"  (click)="myFunction()">
+    </span>
     <p *ngIf="submitted && loginForm?.get('password')?.hasError('required')">
       Este campo es obligatorio y debe contener al menos 1 mayuscula, 1
       minuscula, 1 numero y 1 caracter especial.
