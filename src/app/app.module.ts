@@ -34,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
+import { DeporteComponent } from './shared/footer/deporte/deporte.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { AvisoComponent } from './pages/login/aviso/aviso.component';
     MisionVisionValoresComponent,
     NuevaAsignaturaComponent,
     AvisoComponent,
+    DeporteComponent,
   ],
   imports: [
     BrowserModule,
