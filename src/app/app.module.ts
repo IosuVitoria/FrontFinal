@@ -34,11 +34,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
+
+import { EventosComponent } from './pages/eventos/eventos.component';
+
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
 
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
+
 
 
 @NgModule({
@@ -72,11 +76,15 @@ import { DeporteComponent } from './shared/footer/deporte/deporte.component';
     MisionVisionValoresComponent,
     NuevaAsignaturaComponent,
     AvisoComponent,
+
+    EventosComponent,
+
     NoticiasComponent,
     GaleriaComponent,
 
     NotfoundComponent,
     DeporteComponent
+
 
 
 

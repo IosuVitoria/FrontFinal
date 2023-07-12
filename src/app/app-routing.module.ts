@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AlumnoComponent } from './pages/alumno/alumno.component';
@@ -15,8 +15,10 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
 
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
+
 import { authGuard } from './guard/auth.guard';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
+import { EventosComponent } from './pages/eventos/eventos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
 
@@ -25,6 +27,7 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
+
 
 
 
@@ -45,11 +48,15 @@ const routes: Routes = [
   {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
+
+  {path:"eventos", component:EventosComponent},
+
  
   {path:"deportes", component:DeporteComponent},
    { path: 'noticias', component: NoticiasComponent },
   { path: 'galeria', component: GaleriaComponent },
    {path: '**', pathMatch: 'full', component:NotfoundComponent }
+
 
 
 ];
