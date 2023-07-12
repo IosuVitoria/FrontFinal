@@ -25,6 +25,7 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
+import { ArtesVisualesComponent } from './shared/footer/artes-visuales/artes-visuales.component';
 
 
 
@@ -44,12 +45,11 @@ const routes: Routes = [
   {path:"password", component:PasswordComponent},
   {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
-  {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
- 
+  {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]}, 
   {path:"deportes", component:DeporteComponent},
-   { path: 'noticias', component: NoticiasComponent },
+  { path: 'noticias', component: NoticiasComponent },
   { path: 'galeria', component: GaleriaComponent },
-   {path: '**', pathMatch: 'full', component:NotfoundComponent }
+  {path: 'artesVisualesYmusica', component: ArtesVisualesComponent},
 
 
 ];

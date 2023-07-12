@@ -39,6 +39,7 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
+import { ArtesVisualesComponent } from './shared/footer/artes-visuales/artes-visuales.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { DeporteComponent } from './shared/footer/deporte/deporte.component';
     GaleriaComponent,
 
     NotfoundComponent,
-    DeporteComponent
+    DeporteComponent,
+    ArtesVisualesComponent
 
 
 
