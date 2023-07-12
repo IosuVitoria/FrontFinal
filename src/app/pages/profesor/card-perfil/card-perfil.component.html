@@ -2,19 +2,19 @@
     <img src="ruta-de-la-imagen.jpg" alt="Imagen del profesor">
     <div class="field">
       <label>Nombre:</label>
-      <span>{{datos[0].nombre}}</span>
+      <span>{{datos?.[0]?.nombre}}</span>
     </div>
     <div class="field">
       <label>Apellido: </label>
-      <span>{{datos[0].apellidos}}</span>
+      <span>{{datos?.[0]?.apellidos}}</span>
     </div>
     <div class="field">
       <label>Teléfono: </label>
-      <span>{{datos[0].telefono}}</span>
+      <span>{{datos?.[0]?.telefono}}</span>
     </div>
     <div class="field">
       <label>Email: </label>
-      <span>{{datos[0].email}}</span>
+      <span>{{datos?.[0]?.email}}</span>
     </div>
     <button class="editar-button" (click)="modifyDatos(datos)">Editar datos</button>
   </div>

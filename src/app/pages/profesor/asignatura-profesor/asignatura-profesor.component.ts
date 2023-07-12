@@ -22,7 +22,6 @@ export class AsignaturaProfesorComponent implements OnInit {
   public calificacion: any = {
     nota:"",
     asignatura:"",
-
     alumno:"",
   };
 
@@ -37,8 +36,10 @@ export class AsignaturaProfesorComponent implements OnInit {
 
   ngOnInit(): void {
     this.servicio.getAsignatura().subscribe((data: any) => {
-      this.nuevoArray = data.filter((asignatura: { profesor: string[] }) => asignatura.profesor.includes(this.user._id));
-      console.log(this.nuevoArray);
+      if (this.user && this.user._id) {
+        this.nuevoArray = data.filter((asignatura: { profesor: string[] }) => asignatura.profesor.includes(this.user._id));
+        console.log(this.nuevoArray);
+      }
     });
     
   }
