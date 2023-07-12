@@ -17,7 +17,7 @@
           [checked]="calendarVisible"
           (change)="handleCalendarToggle()"
         />
-        Mostrat/ocultar el calendario
+        Mostrar/ocultar el calendario
       </label>
     </div>
     <div class="demo-app-sidebar-section">
@@ -41,7 +41,7 @@
     </div>
   </div>
 
-  <div class="demo-app-main">
+  <div class="demo-app-main" style="width: 100%">
     <full-calendar *ngIf="calendarVisible()" [options]="calendarOptions()">
       <ng-template #eventContent let-arg>
         <b>{{ arg.timeText }}</b>
