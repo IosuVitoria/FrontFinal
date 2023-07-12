@@ -27,13 +27,10 @@ import { CardPerfilComponent } from './pages/profesor/card-perfil/card-perfil.co
 import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
 import { AsignaturaProfesorComponent } from './pages/profesor/asignatura-profesor/asignatura-profesor.component';
 
-
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
-
-
 
 @NgModule({
   declarations: [
@@ -53,23 +50,19 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
     CardComponent,
     ActividadesCulturalesComponent,
     CalendarioComponent,
-   
-    PasswordComponent,
-         CardPerfilComponent,
-         FormDatosComponent,
-         AsignaturaProfesorComponent,
 
-    
+    PasswordComponent,
+    CardPerfilComponent,
+    FormDatosComponent,
+    AsignaturaProfesorComponent,
+
     NuevoAlumnoComponent,
     NuevoProfesorComponent,
 
     NuevaAsignaturaComponent,
-    MisionVisionValoresComponent
+    MisionVisionValoresComponent,
 
-    NuevaAsignaturaComponent
-    
-
-
+    NuevaAsignaturaComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,9 +76,9 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true
-    },  
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
