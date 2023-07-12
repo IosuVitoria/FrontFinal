@@ -9,6 +9,7 @@
     transition: background-color 0.3s, border-bottom-color 0.3s;
     
   }
+  table{max-width: 100vw;}
 
   .tab:hover {
     background-color: #ddd;
@@ -45,9 +46,22 @@
   .contenedor{ 
     margin-left: 20px; 
     margin-bottom: 50px;
-    width: 90%;}
+    width: 90%;
+    overflow-x: auto;
+  }
 
-button img{ height: 25px;
-padding: 0px;
+button img{ 
+  height: 25px;
+  padding: 0px;
 }
 .calificar { align-items: center;}
+
+.filtro{
+  border: 0px;
+  height: 10px;
+  
+}
+
+.btnFilter{
+  height: 15px !important;
+}

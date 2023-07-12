@@ -10,10 +10,18 @@
   <table>
     <thead>
       <tr>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Curso</th>
-        <th>Nota</th>
+        <th>
+          <span>Nombre</span> <button class="filtro" (click)="sortTable('nombre')"> <img class="btnFilter" src="https://cdn-icons-png.flaticon.com/512/57/57164.png" alt="icono de filtro"></button>
+        </th>
+        <th>
+          <span>Apellidos</span> <button class="filtro" (click)="sortTable('apellidos')"> <img class="btnFilter" src="https://cdn-icons-png.flaticon.com/512/57/57164.png" alt="icono de filtro"></button>
+        </th>
+        <th>
+          <span>Curso</span> <button class="filtro" (click)="sortTable('Curso')"> <img class="btnFilter" src="https://cdn-icons-png.flaticon.com/512/57/57164.png" alt="icono de filtro"></button>
+        </th>
+        <th>
+          <span>Nota</span>
+        </th>
         <th>Calificar</th>
       </tr>
     </thead>
