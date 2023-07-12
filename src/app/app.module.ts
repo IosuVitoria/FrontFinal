@@ -64,9 +64,9 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
     NuevoProfesorComponent,
 
     NuevaAsignaturaComponent,
-    MisionVisionValoresComponent
+    MisionVisionValoresComponent,
 
-    NuevaAsignaturaComponent
+    NuevaAsignaturaComponent,
     
 
 
