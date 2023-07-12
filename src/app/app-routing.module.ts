@@ -21,10 +21,6 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
 
-
-
-
-
 const routes: Routes = [ 
   {path:"", component:HomeComponent},
   {path:"home", component:HomeComponent},
@@ -46,8 +42,6 @@ const routes: Routes = [
   {path: 'noticias', component: NoticiasComponent},
   {path: 'galeria', component: GaleriaComponent},
   {path: '**', pathMatch: 'full', component:NotfoundComponent}
-
-
 
 ];
 
