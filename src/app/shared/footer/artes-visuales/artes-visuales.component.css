@@ -18,6 +18,7 @@ body {
 
   p {
     margin-bottom: 10px;
+
   }
 
   ul {
@@ -34,8 +35,12 @@ body {
     display: flex;
     background-color: #eaf2f8;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin: auto;
     overflow: hidden;
+    width: 80%;
+    margin-bottom: 20px;
+    
+
   }
 
   .card .image {
@@ -49,11 +54,19 @@ body {
   }
 
   .card .content {
-    flex: 0 0 60%;
-    padding: 20px;
+    padding: 40px;
+   
+    
   }
 
   .card h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+  }
+  .textHeader{
+    margin: 20px;
+  }
+  .contenedorGeneral{
+    justify-content:center;
+    
   }
