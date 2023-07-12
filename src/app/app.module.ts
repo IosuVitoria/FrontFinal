@@ -25,6 +25,7 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
+import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
 
 @NgModule({
@@ -48,8 +49,8 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
     PasswordComponent,
     NuevoAlumnoComponent,
     NuevoProfesorComponent,
-    NuevaAsignaturaComponent
-    
+    NuevaAsignaturaComponent,
+    MisionVisionValoresComponent
   ],
   imports: [
     BrowserModule,

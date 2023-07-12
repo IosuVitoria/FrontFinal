@@ -11,10 +11,11 @@ import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { PasswordComponent } from './pages/login/password/password.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
+import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
 
 const routes: Routes = [ 
-  
+  {path:"", component:HomeComponent},
   {path:"home", component:HomeComponent},
   {path:"alumno", component:AlumnoComponent},
   {path:"profesor", component:ProfesorComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"nuevoalumno", component:NuevoAlumnoComponent},
   {path:"nuevoprofesor", component:NuevoProfesorComponent},
   {path:"nuevaasignatura", component:NuevaAsignaturaComponent},
+  {path:"misionvisionvalores", component:MisionVisionValoresComponent},
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},

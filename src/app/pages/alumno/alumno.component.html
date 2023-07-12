@@ -1,22 +1,23 @@
-<app-calendario>
-  <div class="alumno-details">
-    <h4>Datos del Alumno</h4>
-    <div *ngIf="alumno">
-      <p><strong>Nombre:</strong> {{ alumno.nombre }}</p>
-      <p><strong>Apellidos:</strong> {{ alumno.apellidos }}</p>
-      <p><strong>Curso:</strong> {{ alumno.Curso }}</p>
-      <p><strong>Tutor 1:</strong> {{ alumno.tutor1 }}</p>
-      <p>
-        <strong>Tutor 2:</strong> {{ alumno.tutor2 ? alumno.tutor2 : "N/A" }}
-      </p>
-      <p><strong>Tutor de Curso:</strong> {{ alumno.tutorCurso }}</p>
-      <p><strong>Email:</strong> {{ alumno.email }}</p>
-      <p><strong>Asignaturas:</strong></p>
-      <ul>
-        <li *ngFor="let asignatura of alumno.asignaturas">{{ asignatura }}</li>
-      </ul>
-    </div>
-    <div *ngIf="!alumno" class="no-data">
-      <p>No se encontraron datos para el alumno especificado.</p>
-    </div>
-  </div></app-calendario>
+<app-calendario></app-calendario>
+<div class="alumno-details">
+  <h4>Datos del Alumno</h4>
+  <div *ngIf="alumno">
+    <p><strong>Nombre:</strong> {{ alumno.nombre }}</p>
+    <p><strong>Apellidos:</strong> {{ alumno.apellidos }}</p>
+    <p><strong>Curso:</strong> {{ alumno.Curso }}</p>
+    <p><strong>Tutor 1:</strong> {{ alumno.tutor1 }}</p>
+    <p><strong>Tutor 2:</strong> {{ alumno.tutor2 ? alumno.tutor2 : "N/A" }}</p>
+    <p><strong>Tutor de Curso:</strong> {{ alumno.tutorCurso }}</p>
+    <p><strong>Email:</strong> {{ alumno.email }}</p>
+    <p><strong>Asignaturas:</strong></p>
+    <ul>
+      <li *ngFor="let asignatura of asignaturas">{{ asignatura[0].nombre }}</li>
+    
+    </ul>
+    <p>El usuario es: {{ alumno.email }}</p>
+  </div>
+  <div *ngIf="!alumno" class="no-data">
+    <p>No se encontraron datos para el alumno especificado.</p>
+  </div>
+</div>
+<app-notas></app-notas>
