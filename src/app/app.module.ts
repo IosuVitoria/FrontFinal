@@ -60,9 +60,7 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
     NuevoProfesorComponent,
 
     NuevaAsignaturaComponent,
-    MisionVisionValoresComponent,
-    estilo-notas-alumno,
-    NuevaAsignaturaComponent,
+    MisionVisionValoresComponent
   ],
   imports: [
     BrowserModule,
