@@ -12,20 +12,13 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
 import { PasswordComponent } from './pages/login/password/password.component';
 import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
-
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
-
-
 import { authGuard } from './guard/auth.guard';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
-
-
-
 import { NotfoundComponent } from './shared/notfound/notfound.component';
-
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
 
 
@@ -48,14 +41,11 @@ const routes: Routes = [
   {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
-
   {path:"eventos", component:EventosComponent},
-
- 
   {path:"deportes", component:DeporteComponent},
-   { path: 'noticias', component: NoticiasComponent },
-  { path: 'galeria', component: GaleriaComponent },
-   {path: '**', pathMatch: 'full', component:NotfoundComponent }
+  {path: 'noticias', component: NoticiasComponent},
+  {path: 'galeria', component: GaleriaComponent},
+  {path: '**', pathMatch: 'full', component:NotfoundComponent}
 
 
 
