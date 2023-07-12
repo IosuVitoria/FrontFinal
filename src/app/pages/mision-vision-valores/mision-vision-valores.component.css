@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.form-container {
+  flex: 0 0 100%;
+  background-color: #EAF2F8;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.image-container {
+  flex: 0 0 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.titulo {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin-top: 0;
+}
+
+.imageAsignatura {
+  max-width: 90%;
+  height: auto;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.montesori-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.montesori {
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    flex: 0 0 calc(50% - 10px);
+    margin-right: 20px;
+  }
+
+  .image-container {
+    flex: 0 0 calc(50% - 10px);
+  }
+}

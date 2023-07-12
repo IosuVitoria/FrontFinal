@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AsignaturaService } from '../../../../services/asignaturaService.component';
 import { GestionService } from '../../../../services/gestionService.component';
 import { AlumnoCreate } from 'src/app/models/alumno.model';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-alumno',
@@ -10,6 +12,8 @@ import { AlumnoCreate } from 'src/app/models/alumno.model';
 })
 export class NuevoAlumnoComponent implements OnInit {
   asignaturas: any[] = [];
+  role?:string;
+  user:any;
   alumno: AlumnoCreate = {
     nombre: '',
     apellidos: '',
@@ -23,11 +27,27 @@ export class NuevoAlumnoComponent implements OnInit {
 
   constructor(
     private asignaturaService: AsignaturaService,
-    private gestionService: GestionService
+    private gestionService: GestionService, private router: Router
   ) {}
 
   ngOnInit(): void {
     this.getAsignaturas();
+    const userData = sessionStorage.getItem('user');
+    this.user = JSON.parse(String(userData));
+    this.role=this.user.role;
+    if (this.role !== "alumno"){
+      Swal.fire({
+        title: "Colegio El Huargo",
+        text: "Para poder acceder es necesario ser alumno",
+        width: "50%",
+        
+        position:"center",
+        color:"#000000"
+    
+    
+      });
+      this.router.navigate(['/home']);
+    }
   }
 
   getAsignaturas(): void {

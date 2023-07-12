@@ -1,82 +1,152 @@
 <div class="container">
-    <h1 class="titulo">Gestión de Alumnos</h1>
-    <button class="boton-nuevo" routerLink="/nuevoalumno">Nuevo Alumno</button>
-    <div class="filtro">
-      <label for="nombreInput">Filtrar por nombre:</label>
-      <input type="text" id="nombreInput" [(ngModel)]="filtroNombre" (input)="filtrarAlumnos()" />
-    </div>
-  
-    <table class="alumnos-table">
-      <thead>
-        <tr>
-          <th class="table-header">Nombre</th>
-          <th class="table-header">Apellidos</th>
-          <th class="table-header">Curso</th>
-          <th class="table-header">Tutor 1</th>
-          <th class="table-header">Tutor 2</th>
-          <th class="table-header">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let alumno of alumnosFiltrados | slice: (currentPage - 1) * pageSize : currentPage * pageSize">
-          <td>{{ alumno.nombre }}</td>
-          <td>{{ alumno.apellidos }}</td>
-          <td>{{ alumno.Curso }}</td>
-          <td>{{ alumno.tutor1 }}</td>
-          <td>{{ alumno.tutor2 }}</td>
-          <td>
-            <span class="accion" *ngIf="!alumnoEnEdicion" (click)="iniciarEdicionAlumno(alumno)">
-              <i class="fas fa-pencil-alt"></i> Editar
-            </span>
-            <span class="accion" *ngIf="!alumnoEnEdicion" (click)="confirmarEliminacionAlumno(alumno)">
-              <i class="fas fa-times"></i> Eliminar
-            </span>
-          </td>
-        </tr>
-        <tr *ngIf="alumnoEnEdicion === alumnoEnEdicion">
-          <td colspan="6">
-            <form (submit)="confirmarActualizacionAlumno()" class="edicion-form">
-              <h3>Edición datos de alumno</h3>
-              <div class="form-group">
-                <input type="text" [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.nombre" name="nombre" placeholder="Nombre" required>
-              </div>
-              <div class="form-group">
-                <input type="text" [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.apellidos" name="apellidos" placeholder="Apellidos" required>
-              </div>
-              <div class="form-group">
-                <input type="text" [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.Curso" name="curso" placeholder="Curso" required>
-              </div>
-              <div class="form-group">
-                <input type="text" [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.tutor1" name="tutor1" placeholder="Tutor 1" required>
-              </div>
-              <div class="form-group">
-                <input type="text" [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.tutor2" name="tutor2" placeholder="Tutor 2" required>
-              </div>
-              <button type="submit" class="boton-confirmar">Confirmar</button>
-            </form>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <div *ngIf="alumnosFiltrados.length > pageSize" class="pagination">
-      <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1" class="pagination-button">Anterior</button>
-      <button [disabled]="currentPage * pageSize >= alumnosFiltrados.length" (click)="currentPage = currentPage + 1" class="pagination-button">Siguiente</button>
-    </div>
+  <h1 class="titulo">Gestión de Alumnos</h1>
+  <button class="boton-nuevo" routerLink="/nuevoalumno">Nuevo Alumno</button>
+  <div class="filtro">
+    <label for="nombreInput">Filtrar por nombre:</label>
+    <input
+      type="text"
+      id="nombreInput"
+      [(ngModel)]="filtroNombre"
+      (input)="filtrarAlumnos()"
+    />
+  </div>
 
-    <img src="../../../assets/Gestion1.jpg" alt="Imagen de alumnos de huargo" class="imageDivisor">
+  <table class="alumnos-table">
+    <thead>
+      <tr>
+        <th class="table-header">Nombre</th>
+        <th class="table-header">Apellidos</th>
+        <th class="table-header">Curso</th>
+        <th class="table-header">Tutor 1</th>
+        <th class="table-header">Tutor 2</th>
+        <th class="table-header">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let alumno of alumnosFiltrados
+            | slice : (currentPage - 1) * pageSize : currentPage * pageSize
+        "
+      >
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.apellidos }}</td>
+        <td>{{ alumno.Curso }}</td>
+        <td>{{ alumno.tutor1 }}</td>
+        <td>{{ alumno.tutor2 }}</td>
+        <td>
+          <span
+            class="accion"
+            *ngIf="!alumnoEnEdicion"
+            (click)="iniciarEdicionAlumno(alumno)"
+          >
+            <i class="fas fa-pencil-alt"></i> Editar
+          </span>
+          <span
+            class="accion"
+            *ngIf="!alumnoEnEdicion"
+            (click)="confirmarEliminacionAlumno(alumno)"
+          >
+            <i class="fas fa-times"></i> Eliminar
+          </span>
+        </td>
+      </tr>
+      <tr *ngIf="alumnoEnEdicion">
+        <td colspan="6">
+          <form (submit)="confirmarActualizacionAlumno()" class="edicion-form">
+            <h3>Edición datos de alumno</h3>
+            <div class="form-group">
+              <input
+                type="text"
+                [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.nombre"
+                name="nombre"
+                placeholder="Nombre"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.apellidos"
+                name="apellidos"
+                placeholder="Apellidos"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.Curso"
+                name="curso"
+                placeholder="Curso"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.tutor1"
+                name="tutor1"
+                placeholder="Tutor 1"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                [(ngModel)]="alumnoEnEdicion && alumnoEnEdicion.tutor2"
+                name="tutor2"
+                placeholder="Tutor 2"
+                required
+              />
+            </div>
+            <button type="submit" class="boton-confirmar">Confirmar</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="alumnosFiltrados.length > pageSize" class="pagination">
+    <button
+      [disabled]="currentPage === 1"
+      (click)="currentPage = currentPage - 1"
+      class="pagination-button"
+    >
+      Anterior
+    </button>
+    <button
+      [disabled]="currentPage * pageSize >= alumnosFiltrados.length"
+      (click)="currentPage = currentPage + 1"
+      class="pagination-button"
+    >
+      Siguiente
+    </button>
+  </div>
+
+  <img
+    src="../../../assets/Gestion1.jpg"
+    alt="Imagen de alumnos de huargo"
+    class="imageDivisor"
+  />
 </div>
-
 
 <div class="container">
   <h1 class="titulo">Gestión de Profesores</h1>
-  <button class="boton-nuevo" routerLink="/nuevoprofesor">Nuevo Profesor</button>
+  <button class="boton-nuevo" routerLink="/nuevoprofesor">
+    Nuevo Profesor
+  </button>
   <div class="filtro">
     <label for="nombreInput">Filtrar por nombre:</label>
-    <input type="text" id="nombreInput" [(ngModel)]="filtroNombre" (input)="filtrarProfesores()" />
-</div>
+    <input
+      type="text"
+      id="nombreInput"
+      [(ngModel)]="filtroNombre"
+      (input)="filtrarProfesores()"
+    />
+  </div>
 
-<table class="profesor-table">
+  <table class="profesor-table">
     <thead>
       <tr>
         <th class="table-header">Nombre</th>
@@ -87,50 +157,105 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let profesor of profesoresFiltrados | slice: (currentPage - 1) * pageSize : currentPage * pageSize">
+      <tr
+        *ngFor="
+          let profesor of profesoresFiltrados
+            | slice : (currentPage - 1) * pageSize : currentPage * pageSize
+        "
+      >
         <td>{{ profesor.nombre }}</td>
         <td>{{ profesor.apellidos }}</td>
         <td>{{ profesor.email }}</td>
         <td>{{ profesor.telefono }}</td>
         <td>
-          <span class="accion" *ngIf="!profesorEnEdicion" (click)="iniciarEdicionProfesor(profesor)">
+          <span
+            class="accion"
+            *ngIf="!profesorEnEdicion"
+            (click)="iniciarEdicionProfesor(profesor)"
+          >
             <i class="fas fa-pencil-alt"></i> Editar
           </span>
-          <span class="accion" *ngIf="!profesorEnEdicion" (click)="confirmarEliminacion(profesor)">
+          <span
+            class="accion"
+            *ngIf="!profesorEnEdicion"
+            (click)="confirmarEliminacionProfesor(profesor)"
+          >
             <i class="fas fa-times"></i> Eliminar
           </span>
         </td>
       </tr>
       <tr *ngIf="profesorEnEdicion">
         <td colspan="6">
-          <form (submit)="confirmarActualizacionProfesor()" class="edicion-form">
+          <form
+            (submit)="confirmarActualizacionProfesor()"
+            class="edicion-form"
+          >
             <h3>Edición datos de profesor</h3>
             <div class="form-group">
-              <input type="text" [(ngModel)]="profesorEnEdicion.nombre" name="nombre" placeholder="Nombre" required>
+              <input
+                type="text"
+                [(ngModel)]="profesorEnEdicion.nombre"
+                name="nombre"
+                placeholder="Nombre"
+                required
+              />
             </div>
             <div class="form-group">
-              <input type="text" [(ngModel)]="profesorEnEdicion.apellidos" name="apellidos" placeholder="Apellidos" required>
+              <input
+                type="text"
+                [(ngModel)]="profesorEnEdicion.apellidos"
+                name="apellidos"
+                placeholder="Apellidos"
+                required
+              />
             </div>
             <div class="form-group">
-              <input type="text" [(ngModel)]="profesorEnEdicion.email" name="email" placeholder="Email" required>
+              <input
+                type="text"
+                [(ngModel)]="profesorEnEdicion.email"
+                name="email"
+                placeholder="Email"
+                required
+              />
             </div>
             <div class="form-group">
-              <input type="text" [(ngModel)]="profesorEnEdicion.telefono" name="telefono" placeholder="Teléfono" required>
+              <input
+                type="text"
+                [(ngModel)]="profesorEnEdicion.telefono"
+                name="telefono"
+                placeholder="Teléfono"
+                required
+              />
             </div>
             <button type="submit" class="boton-confirmar">Confirmar</button>
           </form>
         </td>
       </tr>
-      
     </tbody>
   </table>
 
   <div *ngIf="alumnosFiltrados.length > pageSize" class="pagination">
-    <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1" class="pagination-button">Anterior</button>
-    <button [disabled]="currentPage * pageSize >= alumnosFiltrados.length" (click)="currentPage = currentPage + 1" class="pagination-button">Siguiente</button>
+    <button
+      [disabled]="currentPage === 1"
+      (click)="currentPage = currentPage - 1"
+      class="pagination-button"
+    >
+      Anterior
+    </button>
+    <button
+      [disabled]="currentPage * pageSize >= alumnosFiltrados.length"
+      (click)="currentPage = currentPage + 1"
+      class="pagination-button"
+    >
+      Siguiente
+    </button>
   </div>
 
-  <img src="../../../assets/Gestion2.jpg" alt="Imagen de alumnos de huargo" class="imageDivisor">
+  <img
+    src="../../../assets/Gestion2.jpg"
+    alt="Imagen de alumnos de huargo"
+    class="imageDivisor"
+  />
 </div>
 
 <!-- Gestion de asignaturas - tabla de código -->
@@ -181,3 +306,107 @@
 
 <img src="../../../assets/Gestion2.jpg" alt="Imagen de alumnos de huargo" class="imageDivisor">
 </div> -->
+
+<div class="container">
+  <h1 class="titulo">Gestión de Asignaturas</h1>
+  <button class="boton-nuevo" routerLink="/nuevaasignatura">
+    Nueva Asignatura
+  </button>
+  <div class="filtro">
+    <label for="nombreInput">Filtrar por nombre:</label>
+    <input
+      type="text"
+      id="nombreInput"
+      [(ngModel)]="filtroNombre"
+      (input)="filtrarAsignaturas()"
+    />
+  </div>
+
+  <table class="asignatura-table">
+    <thead>
+      <tr>
+        <th class="table-header">Nombre</th>
+        <th class="table-header">Profesor</th>
+        <th class="table-header">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let asignatura of asignaturasFiltradas
+            | slice : (currentPage - 1) * pageSize : currentPage * pageSize
+        "
+      >
+        <td>{{ asignatura.nombre }}</td>
+        <td>{{ asignatura.profesor }}</td>
+        <td>
+          <span
+            class="accion"
+            *ngIf="!asignaturaEnEdicion"
+            (click)="iniciarEdicionAsignatura(asignatura)"
+          >
+            <i class="fas fa-pencil-alt"></i> Editar
+          </span>
+          <span
+            class="accion"
+            *ngIf="!asignaturaEnEdicion"
+            (click)="confirmarEliminacionAsignatura(asignatura)"
+          >
+            <i class="fas fa-times"></i> Eliminar
+          </span>
+        </td>
+      </tr>
+      <tr *ngIf="asignaturaEnEdicion">
+        <td colspan="4">
+          <form
+            (submit)="confirmarActualizacionAsignatura()"
+            class="edicion-form"
+          >
+            <h3>Edición datos de asignatura</h3>
+            <div class="form-group">
+              <input
+                type="text"
+                [(ngModel)]="asignaturaEnEdicion.nombre"
+                name="nombre"
+                placeholder="Nombre"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                [(ngModel)]="asignaturaEnEdicion.profesor"
+                name="profesor"
+                placeholder="Profesor"
+                required
+              />
+            </div>
+            <button type="submit" class="boton-confirmar">Confirmar</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="asignaturasFiltradas.length > pageSize" class="pagination">
+    <button
+      [disabled]="currentPage === 1"
+      (click)="currentPage = currentPage - 1"
+      class="pagination-button"
+    >
+      Anterior
+    </button>
+    <button
+      [disabled]="currentPage * pageSize >= asignaturasFiltradas.length"
+      (click)="currentPage = currentPage + 1"
+      class="pagination-button"
+    >
+      Siguiente
+    </button>
+  </div>
+  <img
+    src="../../../assets/Gestion3.jpg"
+    alt="Imagen de alumnos de huargo"
+    class="imageDivisor"
+  />
+</div>

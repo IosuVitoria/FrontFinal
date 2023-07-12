@@ -22,9 +22,17 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { PasswordComponent } from './pages/login/password/password.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
+
+import { CardPerfilComponent } from './pages/profesor/card-perfil/card-perfil.component';
+import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
+import { AsignaturaProfesorComponent } from './pages/profesor/asignatura-profesor/asignatura-profesor.component';
+
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
+import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
 @NgModule({
   declarations: [
@@ -44,10 +52,18 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
     CardComponent,
     ActividadesCulturalesComponent,
     CalendarioComponent,
+
     PasswordComponent,
+    CardPerfilComponent,
+    FormDatosComponent,
+    AsignaturaProfesorComponent,
+
     NuevoAlumnoComponent,
-    NuevoProfesorComponent
-    
+    NuevoProfesorComponent,
+
+    NuevaAsignaturaComponent,
+    MisionVisionValoresComponent,
+    NuevaAsignaturaComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,14 +72,16 @@ import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nu
     ReactiveFormsModule,
     HttpClientModule,
     FullCalendarModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

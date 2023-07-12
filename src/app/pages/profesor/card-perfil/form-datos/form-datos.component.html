@@ -1,0 +1,38 @@
+<p>form-datos works!</p>
+<form [formGroup]="datosForm" (ngSubmit)="onSubmit()">
+    <div class="">  
+      <h3 class="">Editar datos personales</h3>
+      <div class="field">
+        <label>Nombre:</label>
+        <span>{{newDato.nombre}}</span>
+      </div>
+      <div class="field">
+        <label>Apellido: </label>
+        <span>{{newDato.apellidos}}</span>        
+      </div>
+      <div class="field">
+        <label>Telefono: </label>
+        <input class="" placeholder="Teléfono" formControlName="telefono">
+      </div>
+      <div class="field">
+        <label>Email: </label>
+        <input class=""   placeholder="Email" formControlName="email">
+      </div>      
+      <button class="">Actualizar</button>
+    </div>    
+    
+  </form>
+
+
+<!-- 
+  <div *ngIf="newDato">
+    <div class="">
+      <div class="" style="min-width: 700px">                
+        <div class="card-body" style="height: 65%;">
+           <h3 class="card-title" *ngIf="newDato.telefono !== ''">{{newDato.telefono}}</h3>            
+           <span class="card-text" *ngIf="newDato.description !== ''">{{newDato?.email}}</span>              
+        </div>
+      </div>
+    </div>
+  </div>
+   -->

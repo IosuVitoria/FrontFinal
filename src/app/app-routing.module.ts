@@ -10,21 +10,30 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { PasswordComponent } from './pages/login/password/password.component';
+import { FormDatosComponent } from './pages/profesor/card-perfil/form-datos/form-datos.component';
+import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
+
+import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
+
+import { authGuard } from './guard/auth.guard';
+
 
 
 const routes: Routes = [ 
-  
+  {path:"", component:HomeComponent},
   {path:"home", component:HomeComponent},
-  {path:"alumno", component:AlumnoComponent},
-  {path:"profesor", component:ProfesorComponent},
-  {path:"gestionCentro", component:GestionCentroComponent},
-  {path:"nuevoalumno", component:NuevoAlumnoComponent},
-  {path:"nuevoprofesor", component:NuevoProfesorComponent},
+  {path:"alumno", component:AlumnoComponent, canActivate:[authGuard]},
+  {path:"profesor", component:ProfesorComponent, canActivate:[authGuard]},
+  {path:"gestionCentro", component:GestionCentroComponent, canActivate:[authGuard]},
+  {path:"nuevoalumno", component:NuevoAlumnoComponent, canActivate:[authGuard]},
+  {path:"nuevoprofesor", component:NuevoProfesorComponent, canActivate:[authGuard]},
+  {path:"nuevaasignatura", component:NuevaAsignaturaComponent, canActivate:[authGuard]},
+  {path:"misionvisionvalores", component:MisionVisionValoresComponent},
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},
-  {path:"register", component:RegisterComponent}
-  
+  {path:"register", component:RegisterComponent, canActivate:[authGuard]},
+  {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
 ];
 
 @NgModule({

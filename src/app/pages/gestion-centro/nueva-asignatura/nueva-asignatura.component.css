@@ -1,0 +1,75 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+.form-container {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+}
+  
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+  
+.titulo {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-top: 20px;
+}
+  
+.form-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+  
+.form-group label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.form-group input {
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 10px;
+    outline: none;
+    width: 100%;
+}
+  
+.form-group input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+  
+.boton-confirmar {
+    height: 35px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    margin-top: 10px;
+}
+  
+.boton-volver {
+    height: 35px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+  
+.imageAsignatura {
+    width: 700px;
+    height: 500px;
+    border-radius: 30px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+  

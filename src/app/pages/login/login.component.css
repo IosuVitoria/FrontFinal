@@ -7,6 +7,15 @@
   font-family: "Poppins", sans-serif;
   font-size: 16px;
 }
+.span__pass{
+  position: relative;
+}
+.eyeico{
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+
 
 .login {
   max-width: 400px;
@@ -27,6 +36,8 @@
 }
 
 .login input[type="text"],
+.login input[type="password"],
+
 .login select {
   width: 100%;
   padding: 8px;

@@ -4,20 +4,40 @@ import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 import { UserI } from '../../models/user.model';
 import { AuthService } from '../../../services/auth.service';
+import Swal from 'sweetalert2';
+import { ProfesorComponent } from '../profesor/profesor.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent  {
   error:any;
   loginForm!: FormGroup;
   submitted: boolean = false;
   isLogged:boolean=true;
+  bannedByGuard:boolean=false;
+  hide: boolean = true;
   constructor(private form: FormBuilder, private authApi: AuthService, private router: Router){}
   ngOnInit(): void {
     sessionStorage.clear();
+    if (this.authApi.bannedByGuard === true){
+      //alert("Para poder acceder es necesario hacer Login con un usuario valido");
+      Swal.fire({
+        title: "Colegio El Huargo",
+        text: "Para poder acceder es necesario hacer Login con un usuario valido",
+        width: "50%",
+        
+        position:"center",
+        color:"#000000"
+    
+    
+      });
+      this.authApi.bannedByGuard=false;
+      
+    }
+    
     if (this.authApi.tempUser){
       this.loginForm = this.form.group({
         email: [this.authApi.tempUser.email, [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -57,10 +77,13 @@ export class LoginComponent {
           
           sessionStorage.setItem('token', data.token);
           sessionStorage.setItem('user', JSON.stringify(data.user));
-          sessionStorage.setItem('entidad', data.entidad);
-          
-          this.router.navigate(['/home']);
-          
+          sessionStorage.setItem('entidad', JSON.stringify(data.entidad));
+          const user = JSON.parse(String(sessionStorage.getItem('user')))  
+          if(user.role === "profesor"){this.router.navigate(['/profesor']);}
+          else if(user.role === "alumno"){this.router.navigate(['/alumno']);}
+          else if(user.role === "admin"){this.router.navigate(['/gestionCentro']);}
+          else if(user.role === "tutor"){this.router.navigate(['/alumno']);}
+         
         },(error)=>{
           console.log(error);
           if (error.error.message === "Email no registrado en BBDD"){
@@ -86,6 +109,10 @@ export class LoginComponent {
      
       
     }
+    myFunction() {
+      this.hide = !this.hide;
+    }
+   
 
     }
   

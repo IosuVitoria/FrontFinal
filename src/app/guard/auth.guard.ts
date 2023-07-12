@@ -19,8 +19,15 @@ export class authGuard implements CanActivate {
     // if(!this.authApi.getToken() || this.authApi.getRole() !== 'admin')
     if(!this.authApi.getToken())
     {
+      this.authApi.bannedByGuard=true;
       this.router.navigate(['/login']);
     }
+    
+    // this.authApi.checkSession().subscribe((data:any)=>
+    //   data._id === null && this.router.navigate(['/login'])
+    // );
+    
+    
     return true;
   }
   

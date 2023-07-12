@@ -1,54 +1,82 @@
-.cardContainer{
-    overflow: scroll;
-    width: 300px;
-    height: 500px;
-    position: fixed;
-    right: 0.5rem;
-    bottom: 0,5rem;
-
+.cardContainer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 270px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.card-header{
-    background-color: #1b3039;
-    color: white;
-    font-weight: 700;
+.recibido {
+  text-align: right;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-img{
-    width: 20px ;
+.enviado {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.card-body{
-    overflow: scroll;
-    padding: 0.5rem;
-    background-image: url('https://img.freepik.com/premium-vector/chat-seamless-pattern-with-speech-bubbles-vector-background_104589-2053.jpg');
-    padding-bottom: 300px;
+.imgEnviar {
+  width: 50%;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-.imgEnviar:active{
-    transform: scale(0.9);
+
+/* .input-group-text {
+  background-color: #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #333;
+} */
+
+.form-control {
+  border: none;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 10px;
+  color: #333;
+  width: 100%;
 }
 
-.enviado{
-    display: block;
-    float: right;
-    background-color: #1b3039;
-    color: white;
-    min-width: 50.01%;
-    border-radius: 10px;
-    text-align: left;
-    padding: 2;
-}
-.recibido{
-    display: block;
-    float: left;
-    background-color: #1b85b3;
-    color: white;
-    min-width: 50.01%;
-    border-radius: 10px;
-    text-align: left;
-}
-.contenedorDeMensajes{
-    overflow: scroll;
+.card-header {
+  background-color: #292929;
+  color: #fff;
+  text-align: center;
 }
 
+.card-footer {
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.input-group-append {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1080px){
+  .cardContainer{
+      display: none;
+  }
+
+}
