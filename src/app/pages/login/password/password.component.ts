@@ -15,6 +15,8 @@ export class PasswordComponent {
   loginForm!: FormGroup;
   submitted: boolean = false;
   matchpassword:boolean=false;
+  hide: boolean = true;
+  hide2: boolean = true;
   constructor(private form: FormBuilder, private authApi: AuthService, private router: Router){}
 
   ngOnInit(): void {
@@ -48,5 +50,11 @@ export class PasswordComponent {
       }
      
       
+    }
+    myFunction() {
+      this.hide = !this.hide;
+    }
+    myFunction2() {
+      this.hide2 = !this.hide2;
     }
 }

@@ -18,6 +18,7 @@ export class LoginComponent  {
   submitted: boolean = false;
   isLogged:boolean=true;
   bannedByGuard:boolean=false;
+  hide: boolean = true;
   constructor(private form: FormBuilder, private authApi: AuthService, private router: Router){}
   ngOnInit(): void {
     sessionStorage.clear();
@@ -108,7 +109,9 @@ export class LoginComponent  {
      
       
     }
-
+    myFunction() {
+      this.hide = !this.hide;
+    }
    
 
     }

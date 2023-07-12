@@ -173,4 +173,8 @@
   .form-group input {
     max-width: none;
   }
+  th,
+  tr {
+    font-size: 8px;
+  }
 }

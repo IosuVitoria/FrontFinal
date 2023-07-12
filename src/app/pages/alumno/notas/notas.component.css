@@ -1,0 +1,54 @@
+* {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 30%;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  text-align: left;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+}
+
+.table-frame {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
