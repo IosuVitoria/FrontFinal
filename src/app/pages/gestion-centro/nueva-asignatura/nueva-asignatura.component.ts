@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GestionService } from '../../../../services/gestionService.component';
 import { Asignatura } from '../../../models/asignatura.model';
 import { Profesor } from '../../../models/profesor.model';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nueva-asignatura',
@@ -14,10 +16,30 @@ export class NuevaAsignaturaComponent implements OnInit {
     profesor: ''
   };
   profesores: Profesor[] = [];
+  role?:string;
+  user:any;
+  
 
-  constructor(private gestionService: GestionService) { }
+  constructor(private gestionService: GestionService, private router: Router) { }
 
   ngOnInit(): void {
+    const userData = sessionStorage.getItem('user');
+    this.user = JSON.parse(String(userData));
+    this.role=this.user.role;
+    if (this.role !== "admin"){
+      Swal.fire({
+        title: "Colegio El Huargo",
+        text: "Para poder acceder es necesario ser administrador",
+        width: "50%",
+        
+        position:"center",
+        color:"#000000"
+    
+    
+      });
+      this.router.navigate(['/home']);
+    }
+
     this.getProfesores(); 
   }
 

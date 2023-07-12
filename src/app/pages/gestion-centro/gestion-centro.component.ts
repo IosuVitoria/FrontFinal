@@ -207,6 +207,8 @@ import { GestionService } from '../../../services/gestionService.component';
 import { Alumno } from '../../models/alumno.model';
 import { Profesor } from '../../models/profesor.model';
 import { Asignatura } from '../../models/asignatura.model';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alumno',
@@ -232,10 +234,28 @@ export class GestionCentroComponent implements OnInit {
   currentPage: number = 1;
   pageSize: number = 5;
   filtroNombre: string = '';
+  role?:string;
+  user:any;
 
-  constructor(private gestionService: GestionService) { }
+  constructor(private gestionService: GestionService, private router: Router) { }
 
   ngOnInit(): void {
+    const userData = sessionStorage.getItem('user');
+    this.user = JSON.parse(String(userData));
+    this.role=this.user.role;
+    if (this.role !== "admin"){
+      Swal.fire({
+        title: "Colegio El Huargo",
+        text: "Para poder acceder es necesario ser profesor",
+        width: "50%",
+        
+        position:"center",
+        color:"#000000"
+    
+    
+      });
+      this.router.navigate(['/home']);
+    }
     this.getAlumnos();
     this.getProfesores();
     this.getAsignaturas();
