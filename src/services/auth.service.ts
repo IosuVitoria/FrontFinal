@@ -70,4 +70,7 @@ export class AuthService {
     sessionStorage.clear();
     return throwError(error.error.message)
   }
+  sendAviso(aviso:string){
+    return this.http.post(`${this.db_url}/avisos`, aviso)
+  }
 }
