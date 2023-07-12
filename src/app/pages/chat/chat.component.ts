@@ -14,7 +14,7 @@ export class ChatComponent implements OnInit {
   mensajes: any = [
     {
       emisor: "64a703630e6ea120aa93da13",
-      texto: "Hola, en que podemos ayudarte?"
+      texto: "Hola, ¿en qué podemos ayudarte?"
     }
 
   ];
