@@ -14,13 +14,16 @@ export class AuthService {
   isclicked:boolean=false;
   userIdToChangePass:string="";
   tempUser!:UserI;
+  console=console;
+  bannedByGuard:boolean=false;
   constructor(private http: HttpClient) { }
-
+  
   register(user: UserI){
     return this.http.post(`${this.db_url}/user/register`, user)
   }
 
   login(user: UserI){
+    
     return this.http.post(`${this.db_url}/user/login`, user)
   }
   changePassword(password:string){
@@ -31,7 +34,7 @@ export class AuthService {
     // return localStorage.getItem('token');
     return sessionStorage.getItem('token');
   }
-
+  
   getRole(){
     // let user = JSON.parse(String(localStorage.getItem('user')));
     let user = JSON.parse(String(sessionStorage.getItem('user')));
@@ -45,7 +48,9 @@ export class AuthService {
     // localStorage.removeItem('user');
     // sessionStorage.clear();
     sessionStorage.removeItem('token');
-    sessionStorage.removeItem('user')
+    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('entidad');
+
   }
 
 

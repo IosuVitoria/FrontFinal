@@ -1,25 +1,59 @@
 .container {
-  text-align: center;
-  margin-top: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .titulo {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #333;
   margin-top: 20px;
 }
 
-.filtro input {
-  font-family: 'Poppins', sans-serif;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 8px 10px;
-  outline: none;
+.boton-nuevo,
+.boton-confirmar,
+.pagination-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #1b3039;
+  background-color: #eceff1;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  font-size: 18px;
 }
 
-.filtro input:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+.boton-nuevo {
+  margin-bottom: 15px;
+}
+
+.filtro {
+  margin-bottom: 20px;
+}
+
+.filtro label {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  margin-right: 10px;
+}
+
+.filtro input[type="text"] {
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5em;
+  outline: none;
+  width: auto;
+  max-width: 10em;
+  box-sizing: border-box;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .alumnos-table,
@@ -31,6 +65,13 @@
   text-align: center;
 }
 
+.table-header {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333333;
+  border-radius: 8px 8px 0 0;
+}
+
 .alumnos-table th,
 .alumnos-table td,
 .profesor-table th,
@@ -39,22 +80,53 @@
 .asignatura-table td {
   border: 1px solid black;
   padding: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.alumnos-table th,
-.profesor-table th,
-.asignatura-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-  color: #333333;
-  border-radius: 8px 8px 0 0;
+.accion {
+  cursor: pointer;
+  color: red;
 }
 
-.alumnos-table td,
-.profesor-table td,
-.asignatura-table td {
-  font-family: 'Poppins', sans-serif;
+.edicion-form {
+  margin-top: 20px;
+}
+
+.edicion-form h3 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5em;
+  outline: none;
+  width: 40%;
+  box-sizing: border-box;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.boton-confirmar {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #1b3039;
+  background-color: #eceff1;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
 }
 
 .pagination {
@@ -63,9 +135,14 @@
 }
 
 .pagination-button {
+  display: inline-block;
   padding: 6px 12px;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 20px;
   margin-right: 5px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .pagination-button:disabled {
@@ -73,50 +150,27 @@
   cursor: not-allowed;
 }
 
-th:nth-child(6),
-td:nth-child(6) {
-  text-align: center;
-}
-
-.accion {
-  cursor: pointer;
-  color: red;
-}
-
-.accion:hover {
-  text-decoration: underline;
-}
-
-.form-group {
-  margin-bottom: 10px;
-}
-
-.form-group input {
-  font-family: 'Poppins', sans-serif;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 8px 10px;
-  outline: none;
-  width: 25%;
-}
-
-.form-group input:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-}
-
-.boton-confirmar,
-.boton-nuevo {
-  height: 35px;
-  border-radius: 5px;
-  font-family: 'Poppins';
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
 .imageDivisor {
-  width: 60%;
-  margin-top: 20px;
-  border-radius: 100px;
-  margin-bottom: 20px;
+  height: auto;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 50px;
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .filtro input[type="text"] {
+    max-width: none;
+  }
+
+  .form-group input {
+    max-width: none;
+  }
 }

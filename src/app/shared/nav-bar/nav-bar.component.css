@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -30,6 +30,8 @@ body {
   align-items: center;
   height: 85px;
   padding: 15px 10%;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .header .logo {
@@ -37,7 +39,8 @@ body {
 }
 
 .header .logo img {
-  height: 70px;
+  height: 80px;
+  display: flex;
   width: auto;
   transition: all 0.3s ease;
 }
@@ -65,7 +68,7 @@ body {
 }
 
 .header .nav-links li a:hover {
-  color: #ffbc0e;
+  color: #77d4fc;
 }
 
 .menu {
@@ -87,7 +90,7 @@ body {
 .header .btn button:hover,
 .header .menu button:hover {
   background-color: #e2f1f8;
-  color: #ffbc0e;
+  color: #77d4fc;
   transform: scale(1.1);
 }
 

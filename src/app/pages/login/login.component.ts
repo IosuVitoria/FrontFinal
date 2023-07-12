@@ -4,20 +4,38 @@ import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 import { UserI } from '../../models/user.model';
 import { AuthService } from '../../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent  {
   error:any;
   loginForm!: FormGroup;
   submitted: boolean = false;
   isLogged:boolean=true;
+  bannedByGuard:boolean=false;
   constructor(private form: FormBuilder, private authApi: AuthService, private router: Router){}
   ngOnInit(): void {
     sessionStorage.clear();
+    if (this.authApi.bannedByGuard === true){
+      //alert("Para poder acceder es necesario hacer Login con un usuario valido");
+      Swal.fire({
+        title: "Colegio El Huargo",
+        text: "Para poder acceder es necesario hacer Login con un usuario valido",
+        width: "50%",
+        
+        position:"center",
+        color:"#000000"
+    
+    
+      });
+      this.authApi.bannedByGuard=false;
+      
+    }
+    
     if (this.authApi.tempUser){
       this.loginForm = this.form.group({
         email: [this.authApi.tempUser.email, [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -59,7 +77,7 @@ export class LoginComponent {
           sessionStorage.setItem('user', JSON.stringify(data.user));
           sessionStorage.setItem('entidad', JSON.stringify(data.entidad));
           
-          this.router.navigate(['/home']);
+          this.router.navigate(['/profesor']);
           
         },(error)=>{
           console.log(error);
@@ -86,6 +104,8 @@ export class LoginComponent {
      
       
     }
+
+   
 
     }
   
