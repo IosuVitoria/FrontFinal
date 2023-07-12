@@ -6,20 +6,19 @@
   </div>
   <nav class="desktop-menu">
     <ul class="nav-links">
-      <!-- <li><a routerLink="/home">Inicio</a></li> -->
       <li><a routerLink="/alumno">Alumno</a></li>
       <li><a routerLink="/profesor">Profesor</a></li>
       <li><a routerLink="/gestionCentro">Gestión del centro</a></li>
       <li><a routerLink="/contact">Contacto</a></li>
     </ul>
   </nav>
- 
+  
   <div *ngIf="!authApi.getToken()" class="nav__login">
     <a routerLink="/login" class="btn">
       <button>Iniciar sesión</button>
     </a>
   </div>
-  <p class="Saludo" *ngIf="authApi.getToken()">Bienvenid@ {{authApi.getUsuario()}}</p>
+  <p class="saludo" *ngIf="authApi.getToken()">Bienvenid@ {{authApi.getUsuario()}}</p>
   <div>
     <a routerLink="/home" class="btn">
       <button *ngIf="authApi.getToken()" (click)="logout()">Logout</button>
@@ -28,24 +27,22 @@
   <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
     <img src="https://cdn-icons-png.flaticon.com/512/5344/5344581.png" alt="Menu" class="icono">
   </div>
-  <!-- Mobile dropdown menu -->
   <div class="dropdown-menu" [class.show]="isMobileMenuOpen">
     <ul>
       <li><a routerLink="/alumno">Alumno</a></li>
       <li><a routerLink="/profesor">Profesor</a></li>
       <li><a routerLink="/gestionCentro">Gestión del centro</a></li>
       <li><a routerLink="/contact">Contacto</a></li>
-    </ul>
-    <div *ngIf="!authApi.getToken()" class="nav__login">
-      <a routerLink="/login" class="btn">
-        <button>Iniciar sesión</button>
+    <li> 
+      <a *ngIf="!authApi.getToken()"  routerLink="/login"  >
+         Iniciar sesión 
       </a>
-    </div>
-    <p class="Saludo" *ngIf="authApi.getToken()">Bienvenid@ {{authApi.getUsuario()}}</p>
-    <div>
-      <a routerLink="/home" class="btn">
-        <button *ngIf="authApi.getToken()" (click)="logout()">Logout</button>
+    </li>
+    <li>
+      <a routerLink="/home" *ngIf="authApi.getToken()" (click)="logout()">
+        Logout
       </a>
-    </div>
+    </li>
+  </ul>
   </div>
 </header>
