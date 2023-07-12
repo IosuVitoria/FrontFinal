@@ -22,10 +22,6 @@ import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
 import { ArtesVisualesComponent } from './shared/footer/artes-visuales/artes-visuales.component';
 
-
-
-
-
 const routes: Routes = [ 
   {path:"", component:HomeComponent},
   {path:"home", component:HomeComponent},
@@ -48,8 +44,6 @@ const routes: Routes = [
   {path: 'artesVisualesYmusica', component: ArtesVisualesComponent},  
   {path:"eventos", component:EventosComponent},
   {path: '**', pathMatch: 'full', component:NotfoundComponent}
-
-
 
 ];
 
