@@ -1,1 +1,29 @@
-<p>notas works!</p>
+<h1>Notas del Alumno</h1>
+
+<div *ngIf="alumno">
+  <h2>Nombre del Alumno: {{ alumno.nombre }}</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Asignatura</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nota of notas; let i = index">
+        <td>
+          <ul>
+            <li *ngFor="let asig of nota.asignatura; let j = index">
+                {{asig.nombre}}
+            </li>
+          </ul>
+        </td>
+        <td>{{ nota.nota }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!alumno">
+  <p>No se ha encontrado información del alumno.</p>
+</div>

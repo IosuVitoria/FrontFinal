@@ -31,6 +31,7 @@ import { AsignaturaProfesorComponent } from './pages/profesor/asignatura-profeso
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
+import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
 
 
@@ -61,8 +62,13 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
     
     NuevoAlumnoComponent,
     NuevoProfesorComponent,
+
+    NuevaAsignaturaComponent,
+    MisionVisionValoresComponent
+
     NuevaAsignaturaComponent
     
+
 
   ],
   imports: [

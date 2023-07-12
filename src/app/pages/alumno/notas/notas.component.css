@@ -1,0 +1,62 @@
+/* CSS for Alumno Details */
+.alumno-details {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    max-width: 600px;
+    }
+    
+    .alumno-details h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    }
+    
+    .alumno-details p {
+    margin: 5px 0;
+    }
+    
+    .alumno-details ul {
+    margin-top: 5px;
+    padding-left: 20px;
+    }
+    
+    .alumno-details li {
+    list-style-type: disc;
+    margin-left: 10px;
+    }
+    
+    .alumno-details .no-data {
+    font-style: italic;
+    color: #999;
+    }
+    
+    /* CSS for ngIf */
+    .ng-hide {
+    display: none !important;
+    }
+    
+    /* Responsive Adjustments */
+    @media screen and (max-width: 600px) {
+    .alumno-details {
+    margin: 10px auto;
+    padding: 10px;
+    }
+    
+    .alumno-details h4 {
+    font-size: 16px;
+    }
+    
+    .alumno-details p {
+    font-size: 14px;
+    }
+    
+    .alumno-details ul {
+    margin-top: 3px;
+    padding-left: 15px;
+    }
+    
+    .alumno-details li {
+    margin-left: 5px;
+    }
+}

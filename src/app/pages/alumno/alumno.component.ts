@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AlumnoService } from '../../../services/alumnoService.component';
 import { Alumno } from '../../models/alumno.model';
+import { Asignatura } from 'src/app/models/asignatura.model';
 
 @Component({
   selector: 'app-alumno',
@@ -9,26 +9,45 @@ import { Alumno } from '../../models/alumno.model';
   styleUrls: ['./alumno.component.css']
 })
 export class AlumnoComponent implements OnInit {
-  alumno: Alumno | undefined;
-  alumnoId!: string | null;
-
-  constructor(private route: ActivatedRoute,private alumnoService: AlumnoService) { }
   
+  alumno?: Alumno;
+  alumnoId: string | null = null;
+  asignaturas: any[] = [];
+  console = console;
 
+  constructor(private alumnoService: AlumnoService) { }
 
   ngOnInit(): void {
-    this.alumnoId = this.route.snapshot.paramMap.get('id');
-    console.log(this.alumnoId);
+    const entidadData = sessionStorage.getItem('entidad');
+    // console.log(entidadData);
 
-    if (this.alumnoId) {
-      this.alumnoService.getAlumnoById(this.alumnoId).subscribe(
-        (alumno: Alumno) => {
-          this.alumno = alumno;
-        },
-        (error: any) => {
-          console.error(error);
+    if (entidadData) {
+      const entidad = JSON.parse(entidadData);
+      // console.log(entidad);
+
+      this.alumnoId = entidad._id;
+      // console.log("Esto es el ID");
+      // console.log(this.alumnoId);
+      this.alumno = entidad;
+
+      if (this.alumno && this.alumno.asignaturas) {
+        const asignaturaIds = this.alumno.asignaturas;
+        // console.log(asignaturaIds);
+        for (const asignaturaId of asignaturaIds) {
+          // console.log(asignaturaId);
+          this.alumnoService.getAsignaturaById(asignaturaId).subscribe(
+            (asignatura: any) => {
+              console.log(asignatura);
+              console.log(asignatura[0].nombre);
+              this.asignaturas.push(asignatura);
+              // console.log(this.asignaturas)
+            },
+            (error: any) => {
+              console.error(error);
+            }
+          );
         }
-      );
+      }
     }
   }
 }
