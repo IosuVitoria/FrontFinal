@@ -10,7 +10,19 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+.recibido {
+  text-align: right;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 .enviado {
+  text-align: left;
   font-size: 16px;
   margin-bottom: 10px;
   color: #333;
@@ -25,6 +37,7 @@
   margin-left: 10px;
   cursor: pointer;
 }
+
 
 /* .input-group-text {
   background-color: #ccc;
@@ -60,6 +73,7 @@
   display: flex;
   align-items: center;
 }
+
 @media only screen and (max-width: 1080px){
   .cardContainer{
       display: none;

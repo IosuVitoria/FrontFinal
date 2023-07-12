@@ -10,9 +10,8 @@ import { ProfesorServiceService } from 'src/services/profesor-service.service';
   styleUrls: ['./card-perfil.component.css']
 })
 export class CardPerfilComponent {
-  datos!: any;
-  // id!: number;
-  id: any = "64a7028b0e6ea120aa93da07";
+  datos: any = null;
+ 
   console=console
   constructor(
     private servicio: ProfesorServiceService, 

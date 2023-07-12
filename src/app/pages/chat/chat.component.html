@@ -1,9 +1,13 @@
-<div class="card text-center cardContainer">
-  <div class="card-header">Chat</div>
+
+<div class="card text-center cardContainer" *ngIf="id">
+  <div class="card-header">
+    Chat
+  </div>
   <div class="card-body">
-    <div>
-      <p *ngFor="let mensaje of mensajes" class="enviado">
-        {{ mensaje.texto }}
+    <div class="contenedorDeMensajes h-100">
+      <p *ngFor="let mensaje of mensajes" class="p-2"
+      [ngClass]="(id==mensaje.emisor)? 'enviado': 'recibido'">
+      {{mensaje.texto}}
       </p>
     </div>
   </div>

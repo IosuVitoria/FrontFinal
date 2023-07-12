@@ -9,7 +9,8 @@ import { AuthService } from 'src/services/auth.service';
 })
 export class NavBarComponent {
   isMobileMenuOpen: boolean = false;
-
+  user = JSON.parse(String(sessionStorage.getItem('user'))) 
+ 
   constructor( public authApi: AuthService, private router: Router){
   }
  logout(){
@@ -18,5 +19,9 @@ export class NavBarComponent {
   }
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+
   }
+
+ 
+
 }
