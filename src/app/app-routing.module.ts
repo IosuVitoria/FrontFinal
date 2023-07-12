@@ -43,9 +43,10 @@ const routes: Routes = [
   {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
-  {path: '**', pathMatch: 'full', component:NotfoundComponent },
+ 
   {path:"deportes", component:DeporteComponent},
-   { path: 'noticias', component: NoticiasComponent }
+   { path: 'noticias', component: NoticiasComponent },
+   {path: '**', pathMatch: 'full', component:NotfoundComponent }
 
 
 ];
