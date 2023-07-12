@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AlumnoComponent } from './pages/alumno/alumno.component';
@@ -15,8 +15,10 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
 
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
+
 import { authGuard } from './guard/auth.guard';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
+import { EventosComponent } from './pages/eventos/eventos.component';
 
 
 
@@ -36,6 +38,7 @@ const routes: Routes = [
   {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
+  {path:"eventos", component:EventosComponent},
 ];
 
 @NgModule({
