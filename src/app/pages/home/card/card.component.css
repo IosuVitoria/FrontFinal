@@ -1,10 +1,13 @@
   .card {
-    width: 300px;
+    /* width: 300px; */
+    width: 20%;
     padding: 20px;
     background-color: #f0f0f0;
     border-radius: 5px;
     margin-bottom: 20px;
     border: 1px solid gray;
+    word-wrap: break-word;
+    
   }
   
   .card img.user-image {
@@ -16,6 +19,7 @@
   .cometario {
     font-size: 16px;
     margin-bottom: 10px;
+    object-fit: contain;
   }
   
   .rating {
@@ -27,7 +31,23 @@
   }
   .CardDiv{
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     margin: auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
+  }
+
+  @media only screen and (max-width: 968px){
+    .card {
+      /* width: 300px; */
+      width: 40%;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      border: 1px solid gray;
+      word-wrap: break-word;
+      
+    }
   }

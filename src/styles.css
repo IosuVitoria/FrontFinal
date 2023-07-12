@@ -4,3 +4,7 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+ul {
+  list-style: none;
+  padding-inline-start: 20px;
+}
