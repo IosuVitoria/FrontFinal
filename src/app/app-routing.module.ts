@@ -17,6 +17,7 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
 
 import { authGuard } from './guard/auth.guard';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
+import { NotfoundComponent } from './shared/notfound/notfound.component';
 
 
 
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
+  { path: '**', pathMatch: 'full', component:NotfoundComponent }
 ];
 
 @NgModule({
