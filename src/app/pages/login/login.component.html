@@ -14,7 +14,7 @@
     <label for="Input1" class="form-label"> Contraseña </label>
     <span class="span__pass">
       <input formControlName="password" type="password" id="Input1" [type]="hide ? 'password' : 'text'"/>
-      <img src="../../../assets/eye_ico.png" class="eyeico"  (click)="myFunction()">
+      <img src="../../../assets/eye_ico.png" class="eyeico"  alt="visualizar contraseña" (click)="myFunction()">
     </span>
     <p *ngIf="submitted && loginForm?.get('password')?.hasError('required')">
       Este campo es obligatorio y debe contener al menos 1 mayuscula, 1
