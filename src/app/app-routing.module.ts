@@ -18,6 +18,7 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
 import { authGuard } from './guard/auth.guard';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
+import { GaleriaComponent } from './pages/galeria/galeria.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -56,6 +57,7 @@ const routes: Routes = [
     canActivate: [authGuard],
   },
   { path: 'noticias', component: NoticiasComponent },
+  { path: 'galeria', component: GaleriaComponent },
 ];
 
 @NgModule({
