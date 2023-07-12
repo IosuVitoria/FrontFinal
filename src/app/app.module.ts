@@ -36,6 +36,10 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 
+import { NotfoundComponent } from './shared/notfound/notfound.component';
+import { DeporteComponent } from './shared/footer/deporte/deporte.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +71,15 @@ import { NoticiasComponent } from './pages/noticias/noticias.component';
     MisionVisionValoresComponent,
     NuevaAsignaturaComponent,
     AvisoComponent,
+
     NoticiasComponent,
+
+
+    NotfoundComponent,
+
+    DeporteComponent
+
+
   ],
   imports: [
     BrowserModule,

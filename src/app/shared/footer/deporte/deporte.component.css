@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f3f3f3;
+    color: #333;
+    
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    padding: 0;
+    margin: 0;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  .actividad {
+    margin: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #eaf2f8;
+    width: 100px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .actividad h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .actividad img {
+    width: 100%;
+    max-height: 100%; 
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .actividad p {
+    margin-bottom: 0;
+  }
+  
+  .general {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;    
+    justify-content: center;
+  }
+  
+  .actividad {
+    flex: 0 0 calc(50% - 60px);
+  }
+  .form-container {
+    flex: 0 0 100%;
+    background-color: #EAF2F8;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  .titulo{
+    margin: 30px;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .pieImg{
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  @media (min-width: 1050px) {
+    .actividad {
+      flex: 0 0 calc(20% - 60px);
+    }
+  }
+  
+
+
+@media (max-width: 950px) {
+    .actividad {
+      flex: 0 0 calc(48% - 60px);
+    }
+}
+
+
+@media (max-width: 550px) {
+    .actividad {
+      flex: 0 0 calc(75% - 70px);
+    }
+}

@@ -19,43 +19,35 @@ import { authGuard } from './guard/auth.guard';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'alumno', component: AlumnoComponent, canActivate: [authGuard] },
-  { path: 'profesor', component: ProfesorComponent, canActivate: [authGuard] },
-  {
-    path: 'gestionCentro',
-    component: GestionCentroComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'nuevoalumno',
-    component: NuevoAlumnoComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'nuevoprofesor',
-    component: NuevoProfesorComponent,
-    canActivate: [authGuard],
-  },
-  {
-    path: 'nuevaasignatura',
-    component: NuevaAsignaturaComponent,
-    canActivate: [authGuard],
-  },
-  { path: 'misionvisionvalores', component: MisionVisionValoresComponent },
-  { path: 'contact', component: ContactoComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'password', component: PasswordComponent },
-  { path: 'aviso', component: AvisoComponent },
-  { path: 'register', component: RegisterComponent, canActivate: [authGuard] },
-  {
-    path: 'perfilProfesor',
-    component: FormDatosComponent,
-    canActivate: [authGuard],
-  },
-  { path: 'noticias', component: NoticiasComponent },
+
+import { NotfoundComponent } from './shared/notfound/notfound.component';
+
+import { DeporteComponent } from './shared/footer/deporte/deporte.component';
+
+
+
+
+const routes: Routes = [ 
+  {path:"", component:HomeComponent},
+  {path:"home", component:HomeComponent},
+  {path:"alumno", component:AlumnoComponent, canActivate:[authGuard]},
+  {path:"profesor", component:ProfesorComponent, canActivate:[authGuard]},
+  {path:"gestionCentro", component:GestionCentroComponent, canActivate:[authGuard]},
+  {path:"nuevoalumno", component:NuevoAlumnoComponent, canActivate:[authGuard]},
+  {path:"nuevoprofesor", component:NuevoProfesorComponent, canActivate:[authGuard]},
+  {path:"nuevaasignatura", component:NuevaAsignaturaComponent, canActivate:[authGuard]},
+  {path:"misionvisionvalores", component:MisionVisionValoresComponent},
+  {path:"contact", component:ContactoComponent},
+  {path:"login", component:LoginComponent},
+  {path:"password", component:PasswordComponent},
+  {path:"aviso", component:AvisoComponent},
+  {path:"register", component:RegisterComponent, canActivate:[authGuard]},
+  {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
+  {path: '**', pathMatch: 'full', component:NotfoundComponent },
+  {path:"deportes", component:DeporteComponent},
+   { path: 'noticias', component: NoticiasComponent }
+
+
 ];
 
 @NgModule({
