@@ -9,11 +9,7 @@ export class ContactoComponent {
   showFlag: string = 'spain';
 
 constructor() {
-    this.showFlag = 'spain';
-  }
-
-showContactElement(flag: string): void {
-    this.showFlag = flag;
+  
   }
 }
 

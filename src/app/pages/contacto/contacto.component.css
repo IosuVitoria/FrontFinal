@@ -125,3 +125,24 @@
     }
 
     
+    @media (max-width: 768px) {
+        .divNav {
+          margin-top: 100px;
+        }
+      
+        .navLanguage {
+          width: 80vw;
+          margin: 20px 10px;
+        }
+      
+        .liLanguage {
+          margin: 0px 10px;
+        }
+      
+        .contactForm {
+          width: 80vw;
+          margin: 0 auto;
+        }
+      }
+
+    
