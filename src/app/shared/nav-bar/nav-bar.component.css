@@ -17,8 +17,10 @@ body {
   align-items: center;
   height: 105px;
   padding: 15px 10%;
-  margin-left: -10px;
-  margin-right: -10px;
+
+ 
+  margin-left: -1px;
+  margin-right: -1px;
   position: relative;
 }
 
