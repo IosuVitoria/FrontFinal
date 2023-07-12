@@ -17,6 +17,8 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
 
 import { authGuard } from './guard/auth.guard';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
+import { NoticiasComponent } from './pages/noticias/noticias.component';
+
 
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 
@@ -42,12 +44,14 @@ const routes: Routes = [
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
   {path: '**', pathMatch: 'full', component:NotfoundComponent },
-  {path:"deportes", component:DeporteComponent}
+  {path:"deportes", component:DeporteComponent},
+   { path: 'noticias', component: NoticiasComponent }
+
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

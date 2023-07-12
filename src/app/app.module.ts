@@ -34,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 import { AvisoComponent } from './pages/login/aviso/aviso.component';
+import { NoticiasComponent } from './pages/noticias/noticias.component';
 
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
@@ -71,9 +72,13 @@ import { DeporteComponent } from './shared/footer/deporte/deporte.component';
     NuevaAsignaturaComponent,
     AvisoComponent,
 
+    NoticiasComponent,
+
+
     NotfoundComponent,
 
     DeporteComponent
+
 
   ],
   imports: [
