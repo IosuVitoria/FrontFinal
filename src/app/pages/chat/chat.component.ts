@@ -14,20 +14,9 @@ export class ChatComponent implements OnInit {
   mensajes: any = [
     {
       emisor: "64a703630e6ea120aa93da13",
-      texto: "Hola, que tal?"
-    },{
-      emisor: "id",
-      texto: "todo bien y tu?"
-    },{
-      emisor: "64a703630e6ea120aa93da13",
-      texto: "que bueno"
-    },{
-      emisor: "64a703630e6ea120aa93da13",
-      texto: "chao, me voy"
-    },{
-      emisor: "id",
-      texto: "que te vaya bien"
-    },
+      texto: "Hola, en que podemos ayudarte?"
+    }
+
   ];
   constructor(private authService:AuthService) { }
 
