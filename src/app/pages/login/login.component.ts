@@ -5,6 +5,7 @@ import { catchError } from 'rxjs';
 import { UserI } from '../../models/user.model';
 import { AuthService } from '../../../services/auth.service';
 import Swal from 'sweetalert2';
+import { ProfesorComponent } from '../profesor/profesor.component';
 
 @Component({
   selector: 'app-login',
@@ -77,9 +78,12 @@ export class LoginComponent  {
           sessionStorage.setItem('token', data.token);
           sessionStorage.setItem('user', JSON.stringify(data.user));
           sessionStorage.setItem('entidad', JSON.stringify(data.entidad));
-          
-          this.router.navigate(['/profesor']);
-          
+          const user = JSON.parse(String(sessionStorage.getItem('user')))  
+          if(user.role === "profesor"){this.router.navigate(['/profesor']);}
+          else if(user.role === "alumno"){this.router.navigate(['/alumno']);}
+          else if(user.role === "admin"){this.router.navigate(['/gestionCentro']);}
+          else if(user.role === "tutor"){this.router.navigate(['/alumno']);}
+         
         },(error)=>{
           console.log(error);
           if (error.error.message === "Email no registrado en BBDD"){

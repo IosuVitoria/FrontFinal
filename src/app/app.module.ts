@@ -30,6 +30,8 @@ import { AsignaturaProfesorComponent } from './pages/profesor/asignatura-profeso
 import { NuevoAlumnoComponent } from './pages/gestion-centro/nuevo-alumno/nuevo-alumno.component';
 import { NuevoProfesorComponent } from './pages/gestion-centro/nuevo-profesor/nuevo-profesor.component';
 import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatura/nueva-asignatura.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
 @NgModule({
@@ -60,7 +62,8 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
     NuevoProfesorComponent,
 
     NuevaAsignaturaComponent,
-    MisionVisionValoresComponent
+    MisionVisionValoresComponent,
+    NuevaAsignaturaComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +72,8 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
     ReactiveFormsModule,
     HttpClientModule,
     FullCalendarModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     {

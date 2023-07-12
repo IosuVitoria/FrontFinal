@@ -53,7 +53,10 @@ export class AuthService {
 
   }
 
-
+  getUsuario(){
+    const entidad = JSON.parse(String(sessionStorage.getItem('entidad')));
+      return entidad.nombre
+  }
 
   checkSession(){
     return this.http.get(`${this.db_url}/user/checksession`).pipe(
