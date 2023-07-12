@@ -69,3 +69,43 @@ h2 {
 .hide {
   display: none;
 }
+ @media screen and (min-width:768px) and (max-width:1024px) {
+  .card {
+    width: calc(50% - 12px);
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .card-image img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+ }
+ @media screen and (max-width:767px) {
+  .card {
+    width: calc(80% - 12px);
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .card-image img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  .carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+ }
