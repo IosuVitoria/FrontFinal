@@ -16,6 +16,7 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
 
 import { authGuard } from './guard/auth.guard';
+import { AvisoComponent } from './pages/login/aviso/aviso.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},
+  {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]},
 ];

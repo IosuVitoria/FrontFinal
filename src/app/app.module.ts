@@ -33,6 +33,7 @@ import { NuevaAsignaturaComponent } from './pages/gestion-centro/nueva-asignatur
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MisionVisionValoresComponent } from './pages/mision-vision-valores/mision-vision-valores.component';
+import { AvisoComponent } from './pages/login/aviso/aviso.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { MisionVisionValoresComponent } from './pages/mision-vision-valores/misi
     NuevaAsignaturaComponent,
     MisionVisionValoresComponent,
     NuevaAsignaturaComponent,
+    AvisoComponent,
   ],
   imports: [
     BrowserModule,

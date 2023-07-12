@@ -1,0 +1,13 @@
+<form [formGroup]="loginForm" class="login" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <label for="Input1" class="form-label">Introduce tu mensaje y desde administracion trataremos de atenderlo a la mayor brevedad</label><br>
+        
+            <textarea formControlName="password" rows="3" cols="50" id="Input1" class="form-control"></textarea>
+      
+       
+    </div>
+    
+    
+    <div>
+        <button class="btn btn-primary" type="submit"> Enviar aviso </button>
+    </div>

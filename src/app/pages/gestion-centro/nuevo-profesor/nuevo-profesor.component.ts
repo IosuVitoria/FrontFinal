@@ -27,7 +27,7 @@ export class NuevoProfesorComponent {
     const userData = sessionStorage.getItem('user');
     this.user = JSON.parse(String(userData));
     this.role=this.user.role;
-    if (this.role !== "profesor"){
+    if (this.role !== "admin"){
       Swal.fire({
         title: "Colegio El Huargo",
         text: "Para poder acceder es necesario ser profesor",

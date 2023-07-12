@@ -43,4 +43,7 @@
   <div *ngIf="submitted && !isLogged">
     <p><a routerLink="/password">Cambiar contraseña</a></p>
   </div>
+  <div *ngIf="reset">
+    <p><a routerLink="/aviso">¿Olvidaste la contraseña?</a></p>
+  </div>
 </form>

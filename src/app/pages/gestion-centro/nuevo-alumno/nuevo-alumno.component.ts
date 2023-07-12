@@ -35,7 +35,7 @@ export class NuevoAlumnoComponent implements OnInit {
     const userData = sessionStorage.getItem('user');
     this.user = JSON.parse(String(userData));
     this.role=this.user.role;
-    if (this.role !== "alumno"){
+    if (this.role !== "admin"){
       Swal.fire({
         title: "Colegio El Huargo",
         text: "Para poder acceder es necesario ser alumno",

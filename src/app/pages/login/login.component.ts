@@ -19,6 +19,9 @@ export class LoginComponent  {
   isLogged:boolean=true;
   bannedByGuard:boolean=false;
   hide: boolean = true;
+  attemp:number =0;
+  reset:boolean=false;
+
   constructor(private form: FormBuilder, private authApi: AuthService, private router: Router){}
   ngOnInit(): void {
     sessionStorage.clear();
@@ -65,7 +68,12 @@ export class LoginComponent  {
   onSubmit(){
     console.log(this.loginForm.value);
     this.submitted= true;
-
+    this.attemp= this.attemp +1;
+    console.log(this.attemp);
+    if (this.attemp === 3){
+      this.reset=true;
+      console.log(this.reset);
+    }
    
     if(this.loginForm.valid){
       let user: UserI = this.loginForm.value;
