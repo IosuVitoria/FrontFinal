@@ -21,6 +21,9 @@ import { GaleriaComponent } from './pages/galeria/galeria.component';
 import { NotfoundComponent } from './shared/notfound/notfound.component';
 import { DeporteComponent } from './shared/footer/deporte/deporte.component';
 import { ArtesVisualesComponent } from './shared/footer/artes-visuales/artes-visuales.component';
+import { ClubCienciasComponent } from './shared/footer/club-ciencias/club-ciencias.component';
+
+
 
 const routes: Routes = [ 
   {path:"", component:HomeComponent},
@@ -35,16 +38,17 @@ const routes: Routes = [
   {path:"contact", component:ContactoComponent},
   {path:"login", component:LoginComponent},
   {path:"password", component:PasswordComponent},
+  {path:"ciencias", component:ClubCienciasComponent},
   {path:"aviso", component:AvisoComponent},
   {path:"register", component:RegisterComponent, canActivate:[authGuard]},
   {path:"perfilProfesor", component:FormDatosComponent,canActivate:[authGuard]}, 
   {path:"deportes", component:DeporteComponent},
-  { path: 'noticias', component: NoticiasComponent },
-  { path: 'galeria', component: GaleriaComponent },
-  {path: 'artesVisualesYmusica', component: ArtesVisualesComponent},  
+  {path:'noticias', component: NoticiasComponent },
+  {path:'galeria', component: GaleriaComponent },
+  {path:'artesVisualesYmusica', component: ArtesVisualesComponent},  
   {path:"eventos", component:EventosComponent},
-  {path: '**', pathMatch: 'full', component:NotfoundComponent}
-
+  {path:'**', pathMatch: 'full', component:NotfoundComponent}
+  
 ];
 
 @NgModule({
