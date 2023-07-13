@@ -1,4 +1,4 @@
-.card {
+/* .card {
     border: 1px solid black;
     max-width: 500px;
     padding: 20px;
@@ -59,4 +59,39 @@
   .nota {
     font-weight: bold;
     color: green;
+  } */
+
+  .card {
+    border: 1px solid black;
+    max-width: 400px; /* Reducir el ancho máximo */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px; /* Agregar bordes redondeados */
+    display: flex; /* Cambiar a un diseño flexible */
   }
+  
+  .card img {
+    width: 30%; /* Reducir el ancho de la imagen */
+    height: auto;
+    margin-right: 20px; /* Espacio entre la imagen y los campos de texto */
+    border-radius: 10px; /* Agregar bordes redondeados a la imagen */
+  }
+  
+  .card .field {
+    margin-bottom: 10px;
+  }
+  
+  .card .field label {
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  .card .field span {
+    display: inline-block;
+  }
+  
+  .card .editar-button {
+    margin-top: 10px;
+  }
+  
+  

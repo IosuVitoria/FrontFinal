@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Marvel&display=swap");
-
+/* 
 .papa {
   background: url("../../../../../src/assets/imagen1.jpg");
   width: 94vw;
@@ -19,7 +18,7 @@
   flex: 1 0 100%;
   object-fit: cover;
   /* position: relative; */
-  display: flex;
+  /*display: flex;
   justify-content: center;
   animation: 14s slide infinite;
 }
@@ -53,15 +52,15 @@
     flex: 1 0 100%;
     object-fit: cover;
     /* position: relative; */
-    display: flex;
+   /* display: flex;
     justify-content: center;
     animation: 14s slide infinite;
   }
   
 
-}
+}*/
 
-
+/*
 @media only screen and (max-width: 400px){
   .papa {
     background: url("../../../../../src/assets/imagen1.jpg");
@@ -82,10 +81,89 @@
     flex: 1 0 100%;
     object-fit: cover;
     /* position: relative; */
-    display: flex;
+    /*display: flex;
     justify-content: center;
     animation: 14s slide infinite;
   }
   
 
+} */
+
+.papa {
+  background: url("../../../../../src/assets/imagen1.jpg");
+  width: 94vw;
+  height: 80vh;
+  margin: 0 3vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  animation: rotateSlides 20s infinite;
+}
+
+.slide {
+  flex: 1 0 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 70vw;
+  height: 70vh;
+  margin: 0 7vw;
+  border: solid 20px rgb(34, 34, 34);
+  border-radius: 2rem;
+  box-shadow: 0rem 1rem 2rem -0.4rem hsl(0, 0%, 0%);
+}
+
+@keyframes rotateSlides {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+/* Elimina los media queries anteriores */
+
+@media only screen and (max-width: 700px) {
+  .slide img {
+    height: 300px;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .slide img {
+    height: 350px;
+    margin: 0;
+  }
 }
