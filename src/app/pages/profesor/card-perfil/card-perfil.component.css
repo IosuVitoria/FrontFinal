@@ -61,20 +61,22 @@
     color: green;
   } */
 
+
+
   .card {
     border: 1px solid black;
-    max-width: 400px; /* Reducir el ancho máximo */
+    max-width: 400px; 
     padding: 20px;
     margin: 20px;
-    border-radius: 10px; /* Agregar bordes redondeados */
-    display: flex; /* Cambiar a un diseño flexible */
+    border-radius: 10px; 
+    display: flex; 
   }
-  
+
   .card img {
-    width: 30%; /* Reducir el ancho de la imagen */
+    width: 30%; 
     height: auto;
-    margin-right: 20px; /* Espacio entre la imagen y los campos de texto */
-    border-radius: 10px; /* Agregar bordes redondeados a la imagen */
+    margin-right: 20px; 
+    border-radius: 10px; 
   }
   
   .card .field {
